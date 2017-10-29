@@ -1,3 +1,36 @@
 [submodule "zsh/.zprezto"]
 	path = zsh/.zprezto
 	url = https://github.com/sorin-ionescu/prezto
+[submodule "vim/.vim/pack/themes/start/molokai"]
+	path = vim/.vim/pack/themes/start/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "vim/.vim/pack/syntax/start/vim-go"]
+	path = vim/.vim/pack/syntax/start/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "vim/.vim/pack/syntax/start/vim-css3-syntax"]
+	path = vim/.vim/pack/syntax/start/vim-css3-syntax
+	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "vim/.vim/pack/syntax/start/scss-syntax.vim"]
+	path = vim/.vim/pack/syntax/start/scss-syntax.vim
+	url = https://github.com/cakebaker/scss-syntax.vim.git
+[submodule "vim/.vim/pack/syntax/start/vim-css-color"]
+	path = vim/.vim/pack/syntax/start/vim-css-color
+	url = https://github.com/ap/vim-css-color.git
+[submodule "vim/.vim/pack/syntax/start/vim-javascript"]
+	path = vim/.vim/pack/syntax/start/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/.vim/pack/syntax/start/vim-mustache-handlebars"]
+	path = vim/.vim/pack/syntax/start/vim-mustache-handlebars
+	url = https://github.com/mustache/vim-mustache-handlebars.git
+[submodule "vim/.vim/pack/plugins/start/vim-gitgutter"]
+	path = vim/.vim/pack/plugins/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/.vim/pack/plugins/start/ctrlp.vim"]
+	path = vim/.vim/pack/plugins/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/.vim/pack/plugins/start/vim-devicons"]
+	path = vim/.vim/pack/plugins/start/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule "vim/.vim/pack/plugins/start/nerdcommenter"]
+	path = vim/.vim/pack/plugins/start/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
