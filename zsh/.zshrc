@@ -37,3 +37,8 @@ if [[ -r "$(python3 -m site --user-site)/powerline/bindings/zsh/powerline.zsh" ]
     source "$(python3 -m site --user-site)/powerline/bindings/zsh/powerline.zsh"
 fi
 
+# asdf version manager
+if [[ -d "$HOME/.asdf" ]]; then
+  source "$HOME/.asdf/asdf.sh"
+  source "$HOME/.asdf/completions/asdf.bash"
+fi
