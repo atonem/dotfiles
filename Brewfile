@@ -12,6 +12,7 @@ brew "readline"
 brew "libxslt"
 brew "libtool"
 brew "unixodbc"
+brew "gpg"
 
 brew "mas"
 brew "tmux"
