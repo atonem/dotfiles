@@ -28,7 +28,6 @@ if executable('ag')
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag --ignore-case --nogroup --hidden --follow
-        \ -U -p ~/.agignore
         \ -l -m 50000
         \ %s -g ""'
   let g:ctrlp_use_caching = 0
