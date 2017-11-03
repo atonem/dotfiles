@@ -1,0 +1,2 @@
+MANAGE VIM
+  dotfiles vim add <git-url> [<plugin-name>]    Add a new vim plugin as a submodule
