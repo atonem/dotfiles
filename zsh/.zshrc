@@ -42,3 +42,10 @@ if [[ -d "$HOME/.asdf" ]]; then
   source "$HOME/.asdf/asdf.sh"
   source "$HOME/.asdf/completions/asdf.bash"
 fi
+
+#
+# Golang
+#
+export GOPATH=$HOME/code/go
+GOV=$(asdf current golang | sed  's/ (set by .*)//g')
+export GOROOT=$HOME/.asdf/installs/golang/$GOV/go/
