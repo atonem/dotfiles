@@ -29,6 +29,7 @@ set history=1000         " larger history
 set noshowmode           " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set timeout ttimeoutlen=50
 set lazyredraw           " Speed up scrolling etc.
+set autowrite            " Automatically write on :make
 
 set splitright           " Splits to the right
 autocmd VimResized * wincmd =   " Automatically equalize splits when Vim is resized

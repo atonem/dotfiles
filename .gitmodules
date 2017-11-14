@@ -40,3 +40,6 @@
 [submodule "vim/.vim/pack/plugins/start/vim-vinegar"]
 	path = vim/.vim/pack/plugins/start/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+[submodule "vim/.vim/pack/plugins/start/vim-go"]
+	path = vim/.vim/pack/plugins/start/vim-go
+	url = https://github.com/fatih/vim-go
