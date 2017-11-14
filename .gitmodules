@@ -43,3 +43,12 @@
 [submodule "vim/.vim/pack/plugins/start/vim-go"]
 	path = vim/.vim/pack/plugins/start/vim-go
 	url = https://github.com/fatih/vim-go
+[submodule "vim/.vim/pack/plugins/start/editorconfig-vim"]
+	path = vim/.vim/pack/plugins/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "vim/.vim/pack/syntax/start/vim-jsx-pretty"]
+	path = vim/.vim/pack/syntax/start/vim-jsx-pretty
+	url = https://github.com/MaxMEllon/vim-jsx-pretty
+[submodule "vim/.vim/pack/syntax/start/vim-graphql"]
+	path = vim/.vim/pack/syntax/start/vim-graphql
+	url = https://github.com/jparise/vim-graphql
