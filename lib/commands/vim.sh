@@ -22,6 +22,9 @@ vim_command() {
     "add")
       vim_add_plugin $local_callback_args;;
 
+    "remove")
+      vim_remove_plugin $local_callback_args;;
+
     *)
       help_command
       exit 1;;
@@ -29,9 +32,17 @@ vim_command() {
 
 }
 
-vim_add_plugin() {
+vim_remove_plugin() {
+  # TODO: Finish this
+  # git rm -f vim/.vim/pack/syntax/start/vim-jsx
+  "$(git submodule foreach)" | while read; do
+    local name = $REPLY | "$(sed 's/[^ ]* //')"
+    echo $name 
+  done
 
-  local git_url=$1
+}
+
+vim_add_plugin() {
 
   while getopts ":t:n:" arg; do
     case $arg in
@@ -43,7 +54,10 @@ vim_add_plugin() {
         ;;
     esac
   done
-  # TODO: Fix args
+
+  args=("$@")
+  local git_url=${args[${OPTIND} - 1]}
+
 
   # If no plugin name set, use repo name
   if [ -z $plugin_name ]; then
@@ -51,11 +65,11 @@ vim_add_plugin() {
     plugin_name=${basename%.*}
   fi
 
-  # TODO: Allow adding plugin as opt instead of satrt
+  echo "vim/.vim/pack/${plugin_type:-plugins}/start/${plugin_name}"
+  echo "Adding vim plugin..."
+  echo "Name: ${plugin_name}"
+  echo "Type: ${plugin_type:-plugins}"
+  echo "URL: ${git_url}"
   git submodule add $git_url "vim/.vim/pack/${plugin_type:-plugins}/start/${plugin_name}"
 
-  echo $git_url
-  echo $plugin_type
-  echo $plugin_name
-  echo "${plugin_type:-plugins}"
 }
