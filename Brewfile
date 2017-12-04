@@ -36,6 +36,8 @@ cask "font-hack-nerd-font"
 cask "deluge"
 cask "iterm2"
 cask "alfred"
+cask "caprine"
+cask "sublime-text"
 
 mas "1Password", id: 443987910
 mas "Twitter", id: 409789998

@@ -38,10 +38,10 @@ if [[ -r "$(python3 -m site --user-site)/powerline/bindings/zsh/powerline.zsh" ]
 fi
 
 # asdf version manager
-if [[ -d "$HOME/.asdf" ]]; then
-  source "$HOME/.asdf/asdf.sh"
-  source "$HOME/.asdf/completions/asdf.bash"
-fi
+#if [[ -d "$HOME/.asdf" ]]; then
+  #source "$HOME/.asdf/asdf.sh"
+  #source "$HOME/.asdf/completions/asdf.bash"
+#fi
 
 #
 # Golang
@@ -49,3 +49,7 @@ fi
 export GOPATH=$HOME/code/go
 GOV=$(asdf current golang | sed  's/ (set by .*)//g')
 export GOROOT=$HOME/.asdf/installs/golang/$GOV/go/
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
