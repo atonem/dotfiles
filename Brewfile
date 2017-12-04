@@ -34,6 +34,8 @@ brew "swiftlint"
 
 cask "font-hack-nerd-font"
 cask "deluge"
+cask "spectacle"
+cask "caprine"
 cask "iterm2"
 cask "alfred"
 cask "caprine"
@@ -44,3 +46,4 @@ mas "Twitter", id: 409789998
 mas "Slack", id: 803453959
 mas "OmnitOutline", id: 1142578772
 mas "OmniFocus", id: 867299399
+mas "Amphetamine", id: 937984704
