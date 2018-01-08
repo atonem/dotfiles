@@ -52,3 +52,6 @@
 [submodule "vim/.vim/pack/syntax/start/vim-graphql"]
 	path = vim/.vim/pack/syntax/start/vim-graphql
 	url = https://github.com/jparise/vim-graphql
+[submodule "vim/.vim/pack/plugins/start/syntastic"]
+	path = vim/.vim/pack/plugins/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic

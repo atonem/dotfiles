@@ -38,6 +38,8 @@ cask "spectacle"
 cask "caprine"
 cask "iterm2"
 cask "alfred"
+cask "caprine"
+cask "sublime-text"
 
 mas "1Password", id: 443987910
 mas "Twitter", id: 409789998
