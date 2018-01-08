@@ -49,3 +49,10 @@ fi
 export GOPATH=$HOME/code/go
 GOV=$(asdf current golang | sed  's/ (set by .*)//g')
 export GOROOT=$HOME/.asdf/installs/golang/$GOV/go/
+
+#
+# Secrets
+#
+if [[ -a "$HOME/dotfiles/.env" ]]; then
+  source "$HOME/dotfiles/.env"
+fi
