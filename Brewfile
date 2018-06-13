@@ -31,19 +31,26 @@ brew "vnstat"
 brew "vim", args: ["with-python3"]
 brew "editorconfig"
 brew "swiftlint"
+brew "p7zip"
+brew "grv"
+brew "neovim"
 
+casek "cakebrew"
+cask "java"
 cask "font-hack-nerd-font"
 cask "deluge"
 cask "spectacle"
-cask "caprine"
 cask "iterm2"
 cask "alfred"
 cask "caprine"
 cask "sublime-text"
+cask "docker"
 
 mas "1Password", id: 443987910
-mas "Twitter", id: 409789998
 mas "Slack", id: 803453959
 mas "OmnitOutline", id: 1142578772
 mas "OmniFocus", id: 867299399
 mas "Amphetamine", id: 937984704
+mas "Telegram Desktop", id: 946399090
+mas "The Unarchiver", id: 425424353
+mas "TweetDeck", id: 485812721
