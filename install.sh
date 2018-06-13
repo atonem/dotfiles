@@ -2,7 +2,7 @@
 
 install_python3 () {
   # Install user required python packages - ignored required env
-  PIP_REQUIRE_VIRTUALENV=false python3 -m pip install --user -r requirements.txt
+  PIP_REQUIRE_VIRTUALENV=false python -m pip install --user -r requirements.txt
 }
 
 install_ruby () {

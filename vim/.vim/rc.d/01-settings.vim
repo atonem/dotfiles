@@ -90,7 +90,7 @@ match WhitespaceEOL /\s\+$/
 " Python program where client is installed
 " ==================================================
 
-let g:python3_host_prog = '/usr/local/bin/python3'
+"let g:python3_host_prog = '/usr/local/bin/python'
 
 " ==================================================
 " Automatic toggling of relative line numbers

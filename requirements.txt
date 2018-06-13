@@ -1,2 +1,5 @@
 powerline-status
+glances
+ansible
+neovim
 
