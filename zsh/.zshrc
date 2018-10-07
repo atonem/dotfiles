@@ -41,8 +41,9 @@ fi
 #
 # Golang
 #
-export GOPATH=$HOME/code/go
-export GOROOT=$HOME/.asdf/installs/golang/$GOV/go/
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 #
 # Secrets
@@ -57,3 +58,10 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#
+# kubectl completions
+# 
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi

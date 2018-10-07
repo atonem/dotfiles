@@ -13,6 +13,7 @@ brew "libxslt"
 brew "libtool"
 brew "unixodbc"
 brew "gpg"
+brew "go"
 
 brew "mas"
 brew "tmux"
@@ -34,8 +35,11 @@ brew "swiftlint"
 brew "p7zip"
 brew "grv"
 brew "neovim"
+brew "kubernetes-cli"
+brew "maven"
+brew "postgresql"
+brew "awscli"
 
-casek "cakebrew"
 cask "java"
 cask "font-hack-nerd-font"
 cask "deluge"
@@ -45,6 +49,8 @@ cask "alfred"
 cask "caprine"
 cask "sublime-text"
 cask "docker"
+cask "minikube"
+cask "fanny"
 
 mas "1Password", id: 443987910
 mas "Slack", id: 803453959
@@ -54,3 +60,6 @@ mas "Amphetamine", id: 937984704
 mas "Telegram Desktop", id: 946399090
 mas "The Unarchiver", id: 425424353
 mas "TweetDeck", id: 485812721
+mas "Monit", id: 1014850245
+mas "Clocker", id: 1056643111
+mas "Markoff", id: 1084713122
