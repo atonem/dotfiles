@@ -8,50 +8,74 @@ brew "automake"
 brew "autoconf"
 brew "openssl"
 brew "libyaml"
+brew "libjpg"
+brew "zlib"
 brew "readline"
 brew "libxslt"
 brew "libtool"
 brew "unixodbc"
 brew "gpg"
 brew "go"
+brew "nvm"
 
 brew "mas"
 brew "tmux"
-brew "asdf"
-brew "imagemagick"
+brew "imag7magick"
 brew "the_silver_searcher"
 brew "stow"
-brew "python"
-brew "python3"
 brew "zsh"
 brew "zsh-completions"
 brew "tree"
 brew "htop"
 brew "watch"
 brew "vnstat"
-brew "vim", args: ["with-python3"]
-brew "editorconfig"
 brew "swiftlint"
 brew "p7zip"
 brew "grv"
-brew "neovim"
-brew "kubernetes-cli"
-brew "maven"
-brew "postgresql"
-brew "awscli"
+brew "irssi"
 
-cask "java"
-cask "font-hack-nerd-font"
 cask "deluge"
 cask "spectacle"
 cask "iterm2"
 cask "alfred"
 cask "caprine"
+cask "thunderbird"
+ cask "google-chrome"
+
+# Editors
+brew "vim", args: ["with-python3"]
+brew "editorconfig"
+cask "font-hack-nerd-font"
 cask "sublime-text"
+
+
+# Development
+#brew "python"
+brew "python3"
+brew "awscli"
+brew "kubernetes-cli"
+brew "maven"
+brew "postgresql"
+cask "java"
 cask "docker"
 cask "minikube"
-cask "fanny"
 
+
+# Security
+cask "lulu"
+cask "blockblock"
+cask "knockknock"
+cask "appcleaner"
+
+# Quick look
+cask "qlcolorcode"
+cask "qlimagesize"
+cask "qlmarkdown"
+cask "qlstephen"
+cask "quicklook-json"
+cask "qlimagesize"
+
+# App store
 mas "1Password", id: 443987910
 mas "Slack", id: 803453959
 mas "OmnitOutline", id: 1142578772
@@ -61,5 +85,4 @@ mas "Telegram Desktop", id: 946399090
 mas "The Unarchiver", id: 425424353
 mas "TweetDeck", id: 485812721
 mas "Monit", id: 1014850245
-mas "Clocker", id: 1056643111
 mas "Markoff", id: 1084713122

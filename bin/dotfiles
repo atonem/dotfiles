@@ -7,7 +7,8 @@ source "$(dirname "$(dirname "$0")")/lib/utils.sh"
 source "$(dirname "$(dirname "$0")")/lib/commands/help.sh"
 # shellcheck source=lib/commands/vim.sh
 source "$(dirname "$(dirname "$0")")/lib/commands/vim.sh"
-
+# shellcheck source=lib/commands/update.sh
+source "$(dirname "$(dirname "$0")")/lib/commands/update.sh"
 
 # shellcheck disable=SC2124
 callback_args="${@:2}"
@@ -20,6 +21,9 @@ case $1 in
 
 "help")
   help_command $callback_args;;
+
+"update")
+  update_command $callback_args;;
 
 "vim")
   vim_command $callback_args;;
