@@ -57,7 +57,7 @@ path=(
 # Add local user ruby gems to path
 if which ruby >/dev/null && which gem >/dev/null; then
 path=(
-  "$(ruby -rubygems -e 'puts Gem.user_dir')/bin"
+  "$(ruby -r rubygems -e 'puts Gem.user_dir')/bin"
   $path
 )
 fi

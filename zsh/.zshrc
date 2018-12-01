@@ -11,17 +11,19 @@ fi
 ### Pip (Python) ###
 # pip should only run if there is a virtualenv currently activated
 # prevents accidentally installing packages without a virtualenv
-export PIP_REQUIRE_VIRTUALENV=true
+export PIP_REQUIRE_VIRTUALENV=false
 # create syspip workaround
 syspip2(){
-  PIP_REQUIRE_VIRTUALENV="" pip2 "$@"
+  #PIP_REQUIRE_VIRTUALENV="" pip2 "$@"
 }
 syspip3(){
-  PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
+  #PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
 }
 
 # pip3 alias
 alias pip3='python3 -m pip'
+# venv alias
+alias venv='python3 -m venv'
 
 
 ### iTerm2 shell integration ###
@@ -65,3 +67,20 @@ export NVM_DIR="$HOME/.nvm"
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
+
+#
+# tmuxinator completions
+#
+cd $HOME/dotfiles # Need to be in dotfiles dir (should prob use env) for bundle to work
+source "$(bundle show tmuxinator)/completion/tmuxinator.zsh"
+cd - &> /dev/null # Change back to previous working dir and dont print it
+
+#
+# force load vim with custom config
+#
+alias vim="vim -S ~/.vimrc"
+
+#
+# add default ignore command to tree
+#
+alias tree="tree -a -I 'node_modules|.git|.DS_Store' --dirsfirst"
