@@ -10,3 +10,6 @@ fi
 
 # Custom environment vars... Custom scripts generally go in .zshrc since it's
 # only loaded for interactive shells.
+
+# Prepend rbenv for ruby version in path
+export PATH="$HOME/.rbenv/bin:$PATH"

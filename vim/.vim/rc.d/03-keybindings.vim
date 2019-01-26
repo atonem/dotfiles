@@ -9,8 +9,8 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap ; :
 
 " Tab commands
-nnoremap gn :tabnew<CR>
-nnoremap gc :tabclose<CR>
+nnoremap tn :tabnew<CR>
+nnoremap tc :tabclose<CR>
 nnoremap H :tabprev<CR>
 nnoremap L :tabnext<CR>
 " Map alt+n to go to specific tab

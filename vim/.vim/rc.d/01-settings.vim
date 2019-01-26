@@ -117,3 +117,5 @@ let g:netrw_list_hide= '.*\.swp$,.DS_Store,*/tmp/*,*.so,*.swp,*.zip,.git,^\.\.\=
 " ==================================================
 "
 nnoremap <esc> :noh<return><esc>
+
+:set shell=/bin/bash

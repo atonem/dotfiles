@@ -18,6 +18,7 @@ brew "unixodbc"
 brew "gpg"
 brew "go"
 brew "nvm"
+brew "rbenv"
 
 # Ranger utiities
 brew "trash"

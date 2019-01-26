@@ -7,6 +7,14 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+if [[ -s "$HOME/.zshenv" ]]; then
+  source $HOME/.zshenv
+fi
+
+if [[ -s "$HOME/.moonline" ]]; then
+  source $HOME/.moonline/moonline.zsh && moonline initialize
+fi
+
 
 ### Pip (Python) ###
 # pip should only run if there is a virtualenv currently activated
@@ -25,6 +33,9 @@ alias pip3='python3 -m pip'
 # venv alias
 alias venv='python3 -m venv'
 
+# Fix broken ls with correct values
+alias ls='\ls -alhGP'
+
 
 ### iTerm2 shell integration ###
 # https://iterm2.com/documentation-shell-integration.html
@@ -33,7 +44,6 @@ alias venv='python3 -m venv'
 if [[ -s "$HOME/.iterm2_shell_integration.zsh" && "$OSTYPE" = darwin* ]]; then
   source "$HOME/.iterm2_shell_integration.zsh"
 fi
-
 
 #
 # Golang
@@ -73,9 +83,12 @@ cd - &> /dev/null # Change back to previous working dir and dont print it
 #
 # force load vim with custom config
 #
-alias vim="vim -S ~/.vimrc"
+#alias vim="vim -S ~/.vimrc"
+alias vim="nvim -S ~/.vimrc"
 
 #
 # add default ignore command to tree
 #
 alias tree="tree -a -I 'node_modules|.git|.DS_Store' --dirsfirst"
+
+eval "$(rbenv init - zsh)"

@@ -7,7 +7,7 @@ install_python3 () {
 
 install_ruby () {
   # Set gem home to local user path
-  export GEM_HOME="$(ruby -r rubygems -e 'puts Gem.user_dir')"
+  export GEM_HOME="$(gem env home)"
   # Install bundler to read Gemfile for current user
   gem install bundler
   bundle install
@@ -26,6 +26,6 @@ initialize_cocoapods() {
 }
 
 install_ruby
-install_python3
-install_flutter
-initialize_cocoapods
+#install_python3
+#install_flutter
+#initialize_cocoapods
