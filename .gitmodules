@@ -61,3 +61,6 @@
 [submodule "zsh/.moonline"]
 	path = zsh/.moonline
 	url = https://github.com/kagamilove0707/moonline.zsh
+[submodule "vim/.vim/pack/plugins/start/tmuxline"]
+	path = vim/.vim/pack/plugins/start/tmuxline
+	url = https://github.com/edkolev/tmuxline.vim
