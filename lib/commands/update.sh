@@ -14,4 +14,9 @@ update_command() {
   bundle update --all
   echo "Done updating ruby packages."
 
+  echo "Updating android sdk..."
+  android update sdk --no-ui
+  echo "Done updating android sdk."
+
+
 }

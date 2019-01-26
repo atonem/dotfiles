@@ -40,7 +40,7 @@ cask "iterm2"
 cask "alfred"
 cask "caprine"
 cask "thunderbird"
- cask "google-chrome"
+cask "google-chrome"
 
 # Editors
 brew "vim", args: ["with-python3"]
@@ -54,11 +54,29 @@ cask "sublime-text"
 brew "python3"
 brew "awscli"
 brew "kubernetes-cli"
-brew "maven"
 brew "postgresql"
-cask "java"
 cask "docker"
 cask "minikube"
+
+# Java
+brew "jabba"
+cask "java"
+cask "ant"
+cask "maven"
+cask "gradle"
+
+# Flutter
+brew "usbmuxd", args: ["HEAD"]
+brew "libimobiledevice", args: ["HEAD"]
+brew "ideviceinstaller"
+brew "ios-deploy"
+brew "cocoapods"
+
+# Android
+cask "android-sdk"
+cask "android-ndk"
+
+
 
 
 # Security

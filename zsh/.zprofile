@@ -50,6 +50,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
+  #
   #"$(python3 -m site --user-base)/bin"
   $path
 )
@@ -80,3 +81,27 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export KUBECONFIG=$KUBECONFIG:~/.kube/config-devel
+
+#
+# Flutter
+#
+path=(
+  ~/code/flutter/bin
+  $path
+)
+
+#
+# Android dev
+#
+#export ANT_HOME="/usr/local/opt/ant"
+#export MAVEN_HOME="/usr/local/opt/maven"
+#export GRADLE_HOME="/usr/local/opt/gradle"
+export ANDROID_HOME="/Users/antonemmerik/Library/Android"
+#export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
+export ANDROID_SDK_ROOT="/Users/antonemmerik/Library/Android/sdk"
+path=(
+  $ANDROID_HOME/tools
+  $path
+)
+
+
