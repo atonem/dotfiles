@@ -34,11 +34,6 @@ if [[ -s "$HOME/.iterm2_shell_integration.zsh" && "$OSTYPE" = darwin* ]]; then
   source "$HOME/.iterm2_shell_integration.zsh"
 fi
 
-# Powerline statusbar
-if [[ -r "$(python3 -m site --user-site)/powerline/bindings/zsh/powerline.zsh" ]]; then
-    source "$(python3 -m site --user-site)/powerline/bindings/zsh/powerline.zsh"
-fi
-
 
 #
 # Golang
