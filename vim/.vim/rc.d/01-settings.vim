@@ -13,6 +13,7 @@ set ruler                " show the cursor position all the time
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set visualbell
 set nobackup             " do not keep a backup file
+set noswapfile           " do not keep a swap file
 set number               " show line numbers
 set title                " show title in console title bar
 set ttyfast              " smoother changes
@@ -103,3 +104,16 @@ match WhitespaceEOL /\s\+$/
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
+
+" ==================================================
+" Filetypes to hide in netrw
+" ==================================================
+"
+let g:netrw_list_hide= '.*\.swp$,.DS_Store,*/tmp/*,*.so,*.swp,*.zip,.git,^\.\.\=/\=$'
+
+" ==================================================
+" Clear search highlight when escape is pressed.
+" Is really horrible on terminals.
+" ==================================================
+"
+nnoremap <esc> :noh<return><esc>
