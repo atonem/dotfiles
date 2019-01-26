@@ -2,6 +2,7 @@ cask_args appdir: "/Applications"
 
 tap "caskroom/cask"
 tap "caskroom/fonts"
+tap "eddieantonio/eddieantonio"
 
 brew "coreutils"
 brew "automake"
@@ -17,6 +18,19 @@ brew "unixodbc"
 brew "gpg"
 brew "go"
 brew "nvm"
+
+# Ranger utiities
+brew "trash"
+brew "libcaca"
+brew "highlight"
+brew "atool"
+brew "lynx"
+brew "w3m"
+brew "elinks"
+brew "poppler"
+brew "transmission"
+brew "mediainfo"
+brew "exiftool"
 
 brew "mas"
 brew "tmux"
