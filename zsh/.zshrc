@@ -11,10 +11,6 @@ if [[ -s "$HOME/.zshenv" ]]; then
   source $HOME/.zshenv
 fi
 
-if [[ -s "$HOME/.moonline" ]]; then
-  source $HOME/.moonline/moonline.zsh && moonline initialize
-fi
-
 
 ### Pip (Python) ###
 # pip should only run if there is a virtualenv currently activated
@@ -43,6 +39,10 @@ alias ls='\ls -alhGP'
 # OSX box in case I accidentally stow'd the file from my dotfiles on a different platform
 if [[ -s "$HOME/.iterm2_shell_integration.zsh" && "$OSTYPE" = darwin* ]]; then
   source "$HOME/.iterm2_shell_integration.zsh"
+fi
+
+if [[ -s "$HOME/.promptline_theme" ]]; then
+  source "$HOME/.promptline_theme"
 fi
 
 #
