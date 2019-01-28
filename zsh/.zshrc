@@ -91,4 +91,10 @@ alias vim="nvim -S ~/.vimrc"
 #
 alias tree="tree -a -I 'node_modules|.git|.DS_Store' --dirsfirst"
 
+# To get correct ruby path from rbenv
 eval "$(rbenv init - zsh)"
+
+#
+# Dart path
+#
+export PATH=$HOME/.pub-cache/bin:$PATH
