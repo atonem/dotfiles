@@ -25,7 +25,7 @@
         untracked = red reverse
 
 [core]
-        editor = vim
+        editor = nvim
         abbrev = 12
         attributesfile = ~/.gitattributes
         excludesfile = ~/.gitignore
