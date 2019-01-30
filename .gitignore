@@ -1,6 +1,14 @@
+# zsh temp files
 zsh/.zsh/.zhistory
 zsh/.zsh/.zcompcache
 zsh/.zsh/.zcompdump*
+
+# vim temp files
+*/autoload/plug.vim
 vim/.vim/.netrwhist
+
+# secrets
 .env
+
+# sigh
 .DS_Store
