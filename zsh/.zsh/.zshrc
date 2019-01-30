@@ -7,11 +7,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-if [[ -s "$HOME/.zshenv" ]]; then
-  source $HOME/.zshenv
-fi
-
-
 ### Pip (Python) ###
 # pip should only run if there is a virtualenv currently activated
 # prevents accidentally installing packages without a virtualenv
@@ -37,12 +32,12 @@ alias ls='\ls -alhGP'
 # https://iterm2.com/documentation-shell-integration.html
 # For safety, first verify that the file actually exists and that this is an
 # OSX box in case I accidentally stow'd the file from my dotfiles on a different platform
-if [[ -s "$HOME/.iterm2_shell_integration.zsh" && "$OSTYPE" = darwin* ]]; then
-  source "$HOME/.iterm2_shell_integration.zsh"
+if [[ -s "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh" && "$OSTYPE" = darwin* ]]; then
+  source "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh"
 fi
 
-if [[ -s "$HOME/.promptline_theme" ]]; then
-  source "$HOME/.promptline_theme"
+if [[ -s "${ZDOTDIR:-$HOME}/.promptline_theme" ]]; then
+  source "${ZDOTDIR:-$HOME}/.promptline_theme"
 fi
 
 #
@@ -68,7 +63,7 @@ export NVM_DIR="$HOME/.nvm"
 
 #
 # kubectl completions
-# 
+#
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi

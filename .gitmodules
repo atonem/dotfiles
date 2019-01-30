@@ -1,6 +1,3 @@
-[submodule "zsh/.zprezto"]
-	path = zsh/.zprezto
-	url = https://github.com/sorin-ionescu/prezto
 [submodule "vim/.vim/pack/themes/start/molokai"]
 	path = vim/.vim/pack/themes/start/molokai
 	url = https://github.com/tomasr/molokai.git
@@ -70,3 +67,7 @@
 [submodule "vim/.vim/pack/plugins/start/vim-tmux-focus-events"]
 	path = vim/.vim/pack/plugins/start/vim-tmux-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events
+[submodule "zsh/.zsh/.zprezto"]
+	path = zsh/.zsh/.zprezto
+	url = https://github.com/sorin-ionescu/prezto
+	branch = master
