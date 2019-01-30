@@ -120,3 +120,6 @@ let g:netrw_liststyle=3
 nnoremap <esc> :noh<return><esc>
 
 :set shell=/bin/bash
+
+" Add fzf to runtime path
+set rtp+=/usr/local/opt/fzf

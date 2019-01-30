@@ -68,3 +68,6 @@
 	path = zsh/.zsh/.zprezto
 	url = https://github.com/sorin-ionescu/prezto
 	branch = master
+[submodule "vim/.vim/pack/plugins/start/fzf"]
+	path = vim/.vim/pack/plugins/start/fzf
+	url = https://github.com/junegunn/fzf.vim

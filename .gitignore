@@ -1,5 +1,6 @@
 zsh/.zsh/.zhistory
-zsh/.zsh/.zcompdump
+zsh/.zsh/.zcompcache
+zsh/.zsh/.zcompdump*
 vim/.vim/.netrwhist
 .env
 .DS_Store

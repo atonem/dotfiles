@@ -20,6 +20,7 @@ brew "gpg"
 brew "go"
 brew "nvm"
 brew "rbenv"
+brew "fzf"
 
 # Ranger utiities
 brew "trash"

@@ -93,3 +93,8 @@ eval "$(rbenv init - zsh)"
 # Dart path
 #
 export PATH=$HOME/.pub-cache/bin:$PATH
+
+#
+# fzf completions
+#
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
