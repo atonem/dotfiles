@@ -3,3 +3,5 @@ ansible
 neovim
 imgcat
 
+vim-vint
+ansible-lint

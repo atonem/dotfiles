@@ -27,6 +27,9 @@ Plug 'edkolev/promptline.vim', { 'do': ':PromptlineSnapshot ~/.zsh/.promptline_t
 
 " git
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+
 
 " lang
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
@@ -40,12 +43,17 @@ Plug 'jparise/vim-graphql'
 Plug 'posva/vim-vue'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'honza/dockerfile.vim'
 
 " edit
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'matze/vim-move'
 
 " lint
 Plug 'w0rp/ale'

@@ -25,7 +25,7 @@ initialize_cocoapods() {
   pod setup
 }
 
-install_ruby
-#install_python3
-#install_flutter
-#initialize_cocoapods
+ # install_ruby
+install_python3
+# install_flutter
+# initialize_cocoapods

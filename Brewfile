@@ -18,8 +18,8 @@ brew "libtool"
 brew "unixodbc"
 brew "gpg"
 brew "go"
-brew "nvm"
 brew "rbenv"
+brew "nvm"
 brew "fzf"
 
 # Ranger utiities
@@ -61,9 +61,13 @@ cask "google-chrome"
 
 # Editors
 brew "vim", args: ["with-python3"]
+brew "neovim"
 brew "editorconfig"
 cask "font-hack-nerd-font"
 cask "sublime-text"
+
+# Linting
+hadolint
 
 
 # Development

@@ -95,6 +95,8 @@ eval "$(rbenv init - zsh)"
 export PATH=$HOME/.pub-cache/bin:$PATH
 
 #
-# fzf completions
+# fzf completions and configuration
 #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
