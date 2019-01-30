@@ -64,3 +64,9 @@
 [submodule "vim/.vim/pack/plugins/start/vim-commentary"]
 	path = vim/.vim/pack/plugins/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
+[submodule "vim/.vim/pack/plugins/start/vim-tmux"]
+	path = vim/.vim/pack/plugins/start/vim-tmux
+	url = https://github.com/tmux-plugins/vim-tmux
+[submodule "vim/.vim/pack/plugins/start/vim-tmux-focus-events"]
+	path = vim/.vim/pack/plugins/start/vim-tmux-focus-events
+	url = https://github.com/tmux-plugins/vim-tmux-focus-events
