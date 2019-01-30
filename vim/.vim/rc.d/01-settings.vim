@@ -106,10 +106,11 @@ match WhitespaceEOL /\s\+$/
 :augroup END
 
 " ==================================================
-" Filetypes to hide in netrw
+" netrw configuration
 " ==================================================
 "
 let g:netrw_list_hide= '.*\.swp$,.DS_Store,*/tmp/*,*.so,*.swp,*.zip,.git,^\.\.\=/\=$'
+let g:netrw_liststyle=3
 
 " ==================================================
 " Clear search highlight when escape is pressed.

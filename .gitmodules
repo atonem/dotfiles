@@ -31,9 +31,6 @@
 [submodule "vim/.vim/pack/plugins/start/vim-devicons"]
 	path = vim/.vim/pack/plugins/start/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons.git
-[submodule "vim/.vim/pack/plugins/start/nerdcommenter"]
-	path = vim/.vim/pack/plugins/start/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/.vim/pack/plugins/start/vim-vinegar"]
 	path = vim/.vim/pack/plugins/start/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
@@ -64,3 +61,6 @@
 [submodule "vim/.vim/pack/plugins/start/promptline"]
 	path = vim/.vim/pack/plugins/start/promptline
 	url = https://github.com/edkolev/promptline.vim
+[submodule "vim/.vim/pack/plugins/start/vim-commentary"]
+	path = vim/.vim/pack/plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
