@@ -58,6 +58,7 @@ cask "alfred"
 cask "caprine"
 cask "thunderbird"
 cask "google-chrome"
+cask "karabiner-elements"
 
 # Editors
 brew "vim", args: ["with-python3"]
@@ -97,8 +98,6 @@ brew "cocoapods"
 # Android
 cask "android-sdk"
 cask "android-ndk"
-
-
 
 
 # Security

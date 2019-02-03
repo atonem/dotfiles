@@ -2,6 +2,9 @@
 */autoload/plug.vim
 vim/.vim/.netrwhist
 
+# karabiner backups
+karabiner/.config/karabiner/automatic_backups
+
 # secrets
 .env
 
