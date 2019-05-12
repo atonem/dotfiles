@@ -8,6 +8,10 @@ let g:ale_fixers = {
 \  'yaml': ['prettier'],
 \  'html': ['prettier'],
 \  'markdown': ['prettier'],
+\  'python': [
+  \   'isort',
+\   'yapf',
+\  ],
 \}
 
 let g:ale_linter_aliases = {
@@ -19,6 +23,7 @@ let g:ale_linters = {
 \  'javascript': ['eslint'],
 \  'vue': ['vls', 'eslint'],
 \  'vim': ['vint'],
+\   'proto': ['prototool-lint'],
 \}
 
 let g:ale_javascript_eslint_executable = 'eslint_d'
@@ -35,5 +40,19 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_open_list = 1
 
+" Enable protobuf
+" call PrototoolFormatEnable()
+let g:prototool_format_enable = 1
+let g:prototool_format_fix_flag = ''
+let g:prototool_format_enable = 1
+let g:prototool_format_fix_flag = '--fix '
+" call PrototoolFormatFixEnable()
+
 nmap ]a <Plug>(ale_next_wrap)
 nmap [a <Plug>(ale_previous_wrap)
+
+augroup dart
+  autocmd! dart
+  autocmd Filetype dart nnoremap <buffer>  <C-]> :ALEGoToDefinition<CR>
+  " autocmd Filetype dart nnoremap <buffer>  <C-[> :ALEGoToDefinitionInVSplit<CR>
+augroup end

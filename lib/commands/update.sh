@@ -6,7 +6,7 @@ update_command() {
   echo "Done updating homebrew packages."
 
   echo "Updating pip packages..."
-  PIP_REQUIRE_VIRTUALENV=false python3 -m pip install --user -r requirements.txt
+  PIP_REQUIRE_VIRTUALENV=false python3 -m pip install --upgrade --user -r requirements.txt
   echo "Done updating pip packages."
 
 
@@ -14,9 +14,9 @@ update_command() {
   bundle update --all
   echo "Done updating ruby packages."
 
-  echo "Updating android sdk..."
-  android update sdk --no-ui
-  echo "Done updating android sdk."
+  # echo "Updating android sdk..."
+  # android update sdk --no-ui
+  # echo "Done updating android sdk."
 
 
 }

@@ -287,11 +287,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 194 609 401 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>291 419 928 394 0 0 1440 877 </string>
+	<string>1960 112 770 429 1440 -180 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>85 450 640 423 0 0 1440 900 </string>
+	<string>1506 274 640 423 1440 -180 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>673 264 650 427 0 0 1440 900 </string>
+	<string>673 264 640 423 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>197 48 650 475 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
@@ -949,6 +949,8 @@
 	<true/>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
+	<key>NoSyncHaveUsedCopyMode</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
@@ -1087,11 +1089,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-02-17T07:12:07Z</date>
+	<date>2019-05-09T12:21:24Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>StretchTabsToFillBar</key>
 	<true/>
 	<key>TabStyle</key>

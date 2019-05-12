@@ -5,3 +5,5 @@ imgcat
 
 vim-vint
 ansible-lint
+isort
+yapf

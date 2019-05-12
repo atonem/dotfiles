@@ -88,12 +88,12 @@ path=(
 #export ANT_HOME="/usr/local/opt/ant"
 #export MAVEN_HOME="/usr/local/opt/maven"
 #export GRADLE_HOME="/usr/local/opt/gradle"
-#export ANDROID_HOME="/Users/antonemmerik/Library/Android"
 #export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
-#export ANDROID_SDK_ROOT="/Users/antonemmerik/Library/Android/sdk"
-#path=(
-  #$ANDROID_HOME/tools
-  #$path
-#)
-
-
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export ANDROID_HOME=$ANDROID_SDK_ROOT
+path=(
+  $ANDROID_HOME/tools
+  $ANDROID_HOME/platform-tools
+  $ANDROID_HOME/emulator
+  $path
+)

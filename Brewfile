@@ -1,9 +1,13 @@
 cask_args appdir: "/Applications"
 
 tap "caskroom/cask"
-tap "caskroom/fonts"
+tap "easkroom/fonts"
+tap "homebrew/cask-versions"
 tap "eddieantonio/eddieantonio"
 tap "dart-lang/dart"
+tap "universal-ctags/universal-ctags"
+
+brew 'universal-ctags', args: ['HEAD']
 
 brew "coreutils"
 brew "automake"
@@ -19,8 +23,16 @@ brew "unixodbc"
 brew "gpg"
 brew "go"
 brew "rbenv"
+brew "ruby-build"
 brew "nvm"
+brew "jenv"
 brew "fzf"
+brew "prototool"
+brew install yarn
+
+# CLI utilities
+brew "tidy-html5"
+brew "lnav"
 
 # Ranger utiities
 brew "trash"
@@ -37,7 +49,7 @@ brew "exiftool"
 
 brew "mas"
 brew "tmux"
-brew "imag7magick"
+brew "imagemagick"
 brew "the_silver_searcher"
 brew "stow"
 brew "zsh"
@@ -68,8 +80,10 @@ cask "font-hack-nerd-font"
 cask "sublime-text"
 
 # Linting
-hadolint
+# brew hadolint
 
+# Utilityu
+cask "owncloud"
 
 # Development
 #brew "python"
@@ -83,6 +97,7 @@ cask "minikube"
 
 # Java
 brew "jabba"
+cask "java8"
 cask "java"
 cask "ant"
 cask "maven"
@@ -96,8 +111,8 @@ brew "ios-deploy"
 brew "cocoapods"
 
 # Android
-cask "android-sdk"
-cask "android-ndk"
+# cask "android-sdk"
+# cask "android-ndk"
 
 
 # Security

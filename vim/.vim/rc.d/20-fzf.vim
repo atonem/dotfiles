@@ -2,7 +2,7 @@ nnoremap <silent> <leader>f :Files<CR>
 " The following binding collides with gitutter, should be looked at
 nnoremap <silent> <leader>h :History<CR>
 nnoremap <silent> <leader>g :GFiles?<CR>
-nnoremap <silent> <leader>l :Blines<CR>
+nnoremap <silent> <leader>l :BLines<CR>
 nnoremap <silent> <leader>L :Lines<CR>
 nnoremap <silent> <leader>t :BTags<CR>
 nnoremap <silent> <leader>T :Tags<CR>
@@ -23,8 +23,8 @@ let g:fzf_buffers_jump = 1
 
 augroup fzf
   autocmd! FileType fzf
-  autocmd  FileType fzf set laststatus=0 noshowmode noruler nonumber norelativenumber
-    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler number relativenumber
+  autocmd  FileType fzf set laststatus=0 noruler nonumber norelativenumber
+    \| autocmd BufLeave <buffer> set laststatus=2 ruler number relativenumber
 augroup END
 
 " Mapping selecting mappings

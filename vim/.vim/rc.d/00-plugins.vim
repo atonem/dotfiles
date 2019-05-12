@@ -23,6 +23,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'itchyny/lightline.vim'
 Plug 'edkolev/tmuxline.vim', { 'do': g:genereate_tmuxline }
 Plug 'edkolev/promptline.vim', { 'do': ':PromptlineSnapshot ~/.zsh/.promptline_theme lightline' }
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 
 " git
@@ -45,6 +46,7 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'honza/dockerfile.vim'
+Plug 'uber/prototool', { 'rtp':'vim/prototool' }
 
 " edit
 Plug 'editorconfig/editorconfig-vim'
@@ -54,6 +56,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'matze/vim-move'
+Plug 'ludovicchabant/vim-gutentags'
 
 " lint
 Plug 'w0rp/ale'
@@ -61,12 +64,6 @@ Plug 'w0rp/ale'
 " tmux
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
-" Plug ''
-" Plug ''
-" Plug ''
-" Plug ''
-" Plug ''
-" Plug ''
 
 call plug#end()
 endif

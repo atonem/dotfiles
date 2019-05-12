@@ -1,6 +1,17 @@
+#!/usr/bin/env zsh
+# vim:syntax=zsh
+# vim:filetype=zsh
+
+# profile zsh startup
+# zmodload zsh/zprof
+
 #
 # Executes commands at the start of an interactive session.
 #
+
+# Remove annoying empty whitespace to the right
+export ZLE_RPROMPT_INDENT=watwat
+
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -10,7 +21,7 @@ fi
 ### Pip (Python) ###
 # pip should only run if there is a virtualenv currently activated
 # prevents accidentally installing packages without a virtualenv
-export PIP_REQUIRE_VIRTUALENV=false
+export PIP_REQUIRE_VIRTUALENV=true
 # create syspip workaround
 syspip2(){
   #PIP_REQUIRE_VIRTUALENV="" pip2 "$@"
@@ -27,14 +38,9 @@ alias venv='python3 -m venv'
 # Fix broken ls with correct values
 alias ls='\ls -alhGP'
 
+# Use exhuberant-ctags from homebrew
+alias ctags="$(brew --prefix)/bin/ctags"
 
-### iTerm2 shell integration ###
-# https://iterm2.com/documentation-shell-integration.html
-# For safety, first verify that the file actually exists and that this is an
-# OSX box in case I accidentally stow'd the file from my dotfiles on a different platform
-if [[ -s "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh" && "$OSTYPE" = darwin* ]]; then
-  source "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh"
-fi
 
 if [[ -s "${ZDOTDIR:-$HOME}/.promptline_theme" ]]; then
   source "${ZDOTDIR:-$HOME}/.promptline_theme"
@@ -45,7 +51,9 @@ fi
 #
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
+export HOMEBREW_PATH="$(brew --prefix)/bin"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+export PATH="$HOMEBREW_PATH:$PATH"
 
 #
 # Secrets
@@ -54,40 +62,17 @@ if [[ -a "$HOME/dotfiles/.env" ]]; then
   source "$HOME/dotfiles/.env"
 fi
 
-#
-# nvm (node version manager)
-#
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-#
-# kubectl completions
-#
-if [ $commands[kubectl] ]; then
-  source <(kubectl completion zsh)
-fi
-
-#
-# tmuxinator completions
-#
-cd $HOME/dotfiles # Need to be in dotfiles dir (should prob use env) for bundle to work
-source "$(bundle show tmuxinator)/completion/tmuxinator.zsh"
-cd - &> /dev/null # Change back to previous working dir and dont print it
 
 #
 # force load vim with custom config
 #
 #alias vim="vim -S ~/.vimrc"
-alias vim="nvim -S ~/.vimrc"
+alias vim="nvim"
 
 #
 # add default ignore command to tree
 #
 alias tree="tree -a -I 'node_modules|.git|.DS_Store' --dirsfirst"
-
-# To get correct ruby path from rbenv
-eval "$(rbenv init - zsh)"
 
 #
 # Dart path
@@ -100,3 +85,6 @@ export PATH=$HOME/.pub-cache/bin:$PATH
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# profile zsh startup
+# zprof

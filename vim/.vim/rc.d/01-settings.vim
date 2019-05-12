@@ -2,8 +2,8 @@
 " Basic Settings
 " ==================================================
 let mapleader="\<Space>" " change the leader to be a space vs slash
-set ch=2                 " Make command line two lines high
-set ls=2                 " allways show status line
+set cmdheight=2          " Make command line two lines high
+set laststatus=2         " allways show status line
 set scrolloff=3          " keep 3 lines when scrolling
 set cursorline           " have a line indicate the cursor location
 set cindent              " cindent
@@ -14,7 +14,6 @@ set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set visualbell
 set nobackup             " do not keep a backup file
 set noswapfile           " do not keep a swap file
-set number               " show line numbers
 set title                " show title in console title bar
 set ttyfast              " smoother changes
 set modeline             " last lines in document sets vim mode
@@ -22,12 +21,11 @@ set shortmess=atI        " Abbreviate messages
 set nostartofline        " don't jump to first character when paging
 set backspace=indent,eol,start
 set matchpairs+=<:>      " show matching <> (html mainly) as well
-set showmatch
+set noshowmode           " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set matchtime=3
-set sm                   " show matching braces, somewhat annoying...
+set showmatch            " show matching braces, somewhat annoying...
 set mouse=a
 set history=1000         " larger history
-set noshowmode           " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set timeout ttimeoutlen=50
 set lazyredraw           " Speed up scrolling etc.
 set autowrite            " Automatically write on :make
@@ -51,7 +49,7 @@ set colorcolumn=80
 if has('linebreak')      " Break indent wrapped lines
   set breakindent
   let &showbreak = '↳ '
-  set cpo+=n
+  set cpoptions+=n
 end
 
 " ==================================================
@@ -99,18 +97,20 @@ match WhitespaceEOL /\s\+$/
 "
 :set number relativenumber
 
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-:augroup END
+augroup numbertoggle
+  autocmd! numbertoggle
+  " Skip this on netrw so we don't get a ruler
+  autocmd BufEnter,FocusGained,InsertLeave * if &filetype != "netrw" | set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * if &filetype != "netrw" | set norelativenumber
+augroup END
 
 " ==================================================
 " netrw configuration
 " ==================================================
 "
-let g:netrw_list_hide= '.*\.swp$,.DS_Store,*/tmp/*,*.so,*.swp,*.zip,.git,^\.\.\=/\=$'
+let g:netrw_list_hide= '.swp$,.DS_Store,*/tmp/*,*.so,*.swp,*.zip,.git,^\.\.\=/\=$'
 let g:netrw_liststyle=3
+let g:netrw_bufsettings = 'noruler nonumber norelativenumber'
 
 " ==================================================
 " Clear search highlight when escape is pressed.
@@ -120,4 +120,4 @@ let g:netrw_liststyle=3
 nnoremap <esc> :noh<return><esc>
 
 " Add fzf to runtime path
-set rtp+=/usr/local/opt/fzf
+set runtimepath+=/usr/local/opt/fzf
