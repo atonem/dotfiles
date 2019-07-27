@@ -17,6 +17,9 @@
 
 # To get correct ruby path from rbenv
 # TODO: Fix this, should be lazy-laoded?
+
+export RBENV_ROOT="$HOME/.rbenv"
+export PATH="$RBENV_ROOT/shims:$PATH"
 eval "$(rbenv init - zsh)"
 
 #

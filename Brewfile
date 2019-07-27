@@ -29,6 +29,7 @@ brew "jenv"
 brew "fzf"
 brew "prototool"
 brew install yarn
+brew "wireguard-tools"
 
 # CLI utilities
 brew "tidy-html5"
@@ -64,6 +65,7 @@ brew "grv"
 brew "irssi"
 
 cask "deluge"
+cask "transmission"
 cask "spectacle"
 cask "iterm2"
 cask "alfred"
@@ -71,6 +73,8 @@ cask "caprine"
 cask "thunderbird"
 cask "google-chrome"
 cask "karabiner-elements"
+cask "virtualbox"
+cask "vagrant"
 
 # Editors
 brew "vim", args: ["with-python3"]
@@ -140,3 +144,4 @@ mas "The Unarchiver", id: 425424353
 mas "TweetDeck", id: 485812721
 mas "Monit", id: 1014850245
 mas "Markoff", id: 1084713122
+mas "Wireguard", id: 1451685025
