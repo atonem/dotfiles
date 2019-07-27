@@ -23,7 +23,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'itchyny/lightline.vim'
 Plug 'edkolev/tmuxline.vim', { 'do': g:genereate_tmuxline }
 Plug 'edkolev/promptline.vim', { 'do': ':PromptlineSnapshot ~/.zsh/.promptline_theme lightline' }
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 
 " git
@@ -51,6 +50,8 @@ Plug 'uber/prototool', { 'rtp':'vim/prototool' }
 " edit
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'

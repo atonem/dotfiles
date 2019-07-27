@@ -6,7 +6,7 @@ let g:promptline_preset = {
       \'a'    : [ '%n' ],
       \'b'    : [ '%~' ],
       \'c'    : [ promptline#slices#python_virtualenv() ],
-      \'x'    : [ '' ],
+      \'x'    : [ ' ' ],
       \'warn' : [ promptline#slices#last_exit_code()],
       \'y'    :  [ promptline#slices#vcs_branch() ],
       \'z' : [ '' ]}

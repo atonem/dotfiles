@@ -23,7 +23,7 @@ let g:ale_linters = {
 \  'javascript': ['eslint'],
 \  'vue': ['vls', 'eslint'],
 \  'vim': ['vint'],
-\   'proto': ['prototool-lint'],
+\  'proto': ['prototool-lint'],
 \}
 
 let g:ale_javascript_eslint_executable = 'eslint_d'
@@ -37,8 +37,10 @@ let g:ale_sign_warning = '-'
 let g:ale_lint_on_enter = 0
 
 let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
+let g:ale_set_quickeix = 1
 let g:ale_open_list = 1
+" set completeopt=menu,menuone,preview,noselect,noinsert
+" let g:ale_completion_enabled = 1
 
 " Enable protobuf
 " call PrototoolFormatEnable()

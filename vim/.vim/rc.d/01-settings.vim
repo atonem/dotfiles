@@ -24,11 +24,12 @@ set matchpairs+=<:>      " show matching <> (html mainly) as well
 set noshowmode           " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set matchtime=3
 set showmatch            " show matching braces, somewhat annoying...
-set mouse=a
+set mouse-=a             " disable mouse
 set history=1000         " larger history
 set timeout ttimeoutlen=50
 set lazyredraw           " Speed up scrolling etc.
 set autowrite            " Automatically write on :make
+set clipboard=unnamed    " Share clipboard with macos
 
 set splitright           " Splits to the right
 autocmd VimResized * wincmd =   " Automatically equalize splits when Vim is resized
