@@ -92,8 +92,18 @@ path=(
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_HOME=$ANDROID_SDK_ROOT
 path=(
+  $path
   $ANDROID_HOME/tools
   $ANDROID_HOME/platform-tools
   $ANDROID_HOME/emulator
+)
+
+
+#
+# Java
+#
+# export JAVA_HOME=/user/libexec/java_home
+path=(
   $path
+  $HOME/.jenv/bin
 )

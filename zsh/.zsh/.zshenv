@@ -24,6 +24,14 @@ fi
 # Prepend rbenv for ruby version in path
 # export PATH="$HOME/.rbenv/bin:$PATH"
 
+# jenv
+# lazy load jenv
+jenv() {
+  unset -f jenv
+  eval "$(jenv init -)"
+  jenv "$@"
+}
+
 #
 # nvm (node version manager)
 #

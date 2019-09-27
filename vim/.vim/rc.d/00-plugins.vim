@@ -46,6 +46,8 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'honza/dockerfile.vim'
 Plug 'uber/prototool', { 'rtp':'vim/prototool' }
+Plug 'SirVer/ultisnips'
+Plug 'psf/black'
 
 " edit
 Plug 'editorconfig/editorconfig-vim'

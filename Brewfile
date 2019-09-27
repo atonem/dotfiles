@@ -2,6 +2,7 @@ cask_args appdir: "/Applications"
 
 tap "caskroom/cask"
 tap "easkroom/fonts"
+tap "easkroom/versions"
 tap "homebrew/cask-versions"
 tap "eddieantonio/eddieantonio"
 tap "dart-lang/dart"
@@ -41,7 +42,7 @@ brew "libcaca"
 brew "highlight"
 brew "atool"
 brew "lynx"
-brew "w3m"
+# brew "w3m"
 brew "elinks"
 brew "poppler"
 brew "transmission"
@@ -83,8 +84,11 @@ brew "editorconfig"
 cask "font-hack-nerd-font"
 cask "sublime-text"
 
-# Linting
+# Linting / formatting
 # brew hadolint
+brew "google-java-format"
+brew "checkstyle"
+
 
 # Utilityu
 cask "owncloud"
@@ -101,11 +105,13 @@ cask "minikube"
 
 # Java
 brew "jabba"
-cask "java8"
+cask "adoptopenjdk8"
 cask "java"
+cask "java11"
 cask "ant"
 cask "maven"
 cask "gradle"
+brew "sbt"
 
 # Flutter
 brew "usbmuxd", args: ["HEAD"]

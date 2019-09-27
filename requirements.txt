@@ -6,4 +6,6 @@ imgcat
 vim-vint
 ansible-lint
 isort
-yapf
+black
+python-language-server
+pyls-black

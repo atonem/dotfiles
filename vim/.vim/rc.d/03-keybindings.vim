@@ -36,6 +36,18 @@ nnoremap Y y$
 " qq to record, Q to replay
 nnoremap Q @q
 
+" use ctrl+hjkl in insert mode
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+cnoremap <C-h> <Left>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+cnoremap <C-l> <Right>
+
+" TODO: Add more i/c mappings for w, W, b, B, etc.
+
 " ----------------------------------------------------------------------------
 " Moving lines
 " ----------------------------------------------------------------------------
