@@ -23,6 +23,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'itchyny/lightline.vim'
 Plug 'edkolev/tmuxline.vim', { 'do': g:genereate_tmuxline }
 Plug 'edkolev/promptline.vim', { 'do': ':PromptlineSnapshot ~/.zsh/.promptline_theme lightline' }
+Plug 'liuchengxu/vista.vim'
 
 
 " git
@@ -51,7 +52,7 @@ Plug 'psf/black'
 
 " edit
 Plug 'editorconfig/editorconfig-vim'
-Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug '/usr/local/opt/fzf'
