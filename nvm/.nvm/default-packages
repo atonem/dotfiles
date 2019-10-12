@@ -1,4 +1,5 @@
 eslint_d
+eslint
 eslint-plugin-vue
 prettier
 vue-language-server
