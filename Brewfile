@@ -85,6 +85,7 @@ brew "neovim"
 brew "editorconfig"
 cask "font-hack-nerd-font"
 cask "sublime-text"
+cask "alacritty"
 
 # Linting / formatting
 # brew hadolint
