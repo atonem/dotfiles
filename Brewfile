@@ -7,6 +7,7 @@ tap "homebrew/cask-versions"
 tap "eddieantonio/eddieantonio"
 tap "dart-lang/dart"
 tap "universal-ctags/universal-ctags"
+tap "PotatoLabs/homebrew-git-redate"
 
 brew 'universal-ctags', args: ['HEAD']
 
@@ -64,6 +65,7 @@ brew "swiftlint"
 brew "p7zip"
 brew "grv"
 brew "irssi"
+brew "git-redate"
 
 cask "deluge"
 cask "transmission"
