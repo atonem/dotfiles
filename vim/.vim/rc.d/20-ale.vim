@@ -1,7 +1,7 @@
 
+" \  'dart': ['dartfmt'],
 let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
-\  'dart': ['dartfmt'],
 \  'javascript': ['prettier', 'eslint'],
 \  'vue': ['prettier', 'eslint'],
 \  'json': ['prettier'],
@@ -10,23 +10,27 @@ let g:ale_fixers = {
 \  'markdown': ['prettier'],
 \  'python': ['black', 'isort'],
 \  'java': ['google_java_format'],
+\  'xml': ['xmllint'],
 \}
 
 let g:ale_linter_aliases = {
 \  'vue': ['vue', 'javascript']
 \}
 
+" 'dart': ['language_server'],
+" 'dart': ['dartanalyzer'],
 let g:ale_linters = {
-\  'dart': ['language_server'],
+\  'dart': [ 'language_server'],
 \  'javascript': ['eslint'],
 \  'vue': ['vls', 'eslint'],
 \  'vim': ['vint'],
 \  'proto': ['prototool-lint'],
 \  'python': ['pyls'],
+\  'xml': ['xmllint'],
 \}
 
 let g:ale_javascript_eslint_executable = 'eslint_d'
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_lint_on_enter = 1
 let g:ale_set_highlights = 0
 let g:ale_lint_on_text_changed = 'never'
@@ -56,13 +60,17 @@ let g:prototool_format_fix_flag = '--fix '
 let g:ale_java_checkstyle_config = './google_checks.xml'
 " To get ALE to use correct javac when using jenv
 let g:ale_java_javac_executable = '$HOME/.jenv/shims/javac'
+let g:ale_java_google_java_format_use_global = 1
 
 
 nmap ]a <Plug>(ale_next_wrap)
 nmap [a <Plug>(ale_previous_wrap)
+nmap <leader>i :ALEFix<cr>
+nmap <C-]> :ALEGoToDefinition<CR>
+" nmap <C-[> :ALEGoToDefinitionInVSplit<CR>
 
-augroup dart
-  autocmd! dart
-  autocmd Filetype dart nnoremap <buffer>  <C-]> :ALEGoToDefinition<CR>
-  " autocmd Filetype dart nnoremap <buffer>  <C-[> :ALEGoToDefinitionInVSplit<CR>
-augroup end
+" augroup dart
+"   autocmd! dart
+"   autocmd Filetype dart nnoremap <buffer>  <C-]> :ALEGoToDefinition<CR>
+"   autocmd Filetype dart nnoremap <buffer>  <C-[> :ALEGoToDefinitionInVSplit<CR>
+" augroup end

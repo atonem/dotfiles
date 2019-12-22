@@ -49,6 +49,7 @@ Plug 'honza/dockerfile.vim'
 Plug 'uber/prototool', { 'rtp':'vim/prototool' }
 Plug 'SirVer/ultisnips'
 Plug 'psf/black'
+Plug 'rust-lang/rust.vim'
 
 " edit
 Plug 'editorconfig/editorconfig-vim'

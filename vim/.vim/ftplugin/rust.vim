@@ -1,3 +1,2 @@
-nnoremap <leader>i :DartFmt<cr>
+nnoremap <leader>i :RustFmt<cr>
 let g:ale_completion_enabled = 0
-

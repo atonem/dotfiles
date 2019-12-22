@@ -33,6 +33,6 @@ fi
 # https://iterm2.com/documentation-shell-integration.html
 # For safety, first verify that the file actually exists and that this is an
 # OSX box in case I accidentally stow'd the file from my dotfiles on a different platform
-if [[ -s "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh" && "$OSTYPE" = darwin* ]]; then
-  source "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh"
-fi
+# if [[ -s "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh" && "$OSTYPE" = darwin* ]]; then
+#   source "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh"
+# fi

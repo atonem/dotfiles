@@ -118,7 +118,7 @@ let g:netrw_bufsettings = 'noruler nonumber norelativenumber'
 " Is really horrible on terminals.
 " ==================================================
 "
-nnoremap <esc> :noh<return><esc>
+" nnoremap <esc> :noh<return><esc>
 
 " Add fzf to runtime path
 set runtimepath+=/usr/local/opt/fzf

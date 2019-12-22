@@ -1,4 +1,4 @@
-let g:go_list_type = "quickfix"
+let g:go_list_type = 'quickfix'
 
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
@@ -14,6 +14,12 @@ map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
-autocmd FileType go nmap <leader>c  <Plug>(go-coverage-toggle)
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+let g:go_fmt_command = 'goimports'
+let g:go_auto_type_info = 1
+
+augroup go
+  autocmd FileType go nmap <leader>r  <Plug>(go-run)
+  " autocmd FileType go nmap <leader>c  <Plug>(go-coverage-toggle)
+  autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+  autocmd FileType go nmap <C-]> :GoDef
+augroup end
