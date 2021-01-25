@@ -1,14 +1,15 @@
 nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>da :Lines<CR>
+nnoremap <silent> <leader>dd :BLines<CR>
+nnoremap <silent> <leader>db :Buffers<CR>
 " The following binding collides with gitutter, should be looked at
-nnoremap <silent> <leader>h :History<CR>
-nnoremap <silent> <leader>g :GFiles?<CR>
-nnoremap <silent> <leader>l :BLines<CR>
-nnoremap <silent> <leader>L :Lines<CR>
+nnoremap <silent> <leader>dh :History<CR>
+nnoremap <silent> <leader>dg :GFiles?<CR>
+nnoremap <silent> <leader>dc :BCommits<CR>
 nnoremap <silent> <leader>t :BTags<CR>
 nnoremap <silent> <leader>T :Tags<CR>
 nnoremap <silent> <leader>m :Marks<CR>
 nnoremap <silent> <leader>w :Windows<CR>
-nnoremap <silent> <leader>c :BCommits<CR>
 nnoremap <silent> <leader>C :commits<CR>
 " nnoremap <silent> <leader>s :Snippets<CR>
 

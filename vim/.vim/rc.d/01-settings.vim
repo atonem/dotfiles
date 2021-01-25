@@ -1,7 +1,6 @@
 " ==================================================
 " Basic Settings
 " ==================================================
-let mapleader="\<Space>" " change the leader to be a space vs slash
 set cmdheight=2          " Make command line two lines high
 set laststatus=2         " allways show status line
 set scrolloff=3          " keep 3 lines when scrolling
@@ -54,11 +53,11 @@ if has('linebreak')      " Break indent wrapped lines
 end
 
 " ==================================================
-" Tab expanded to 4 spaces
+" Tab expanded to 2 spaces
 " ==================================================
 set tabstop=2            " numbers of spaces of tab character
 set shiftwidth=2         " numbers of spaces to (auto)indent
-set expandtab		     " Tab to spaces by default
+set expandtab		         " Tab to spaces by default
 set softtabstop=2
 
 " ==================================================
@@ -74,8 +73,8 @@ set smartcase            " if searching and search contains upper case, make cas
 " ==================================================
 " No modlines for security
 " ==================================================
-set modelines=0
-set nomodeline
+set modelines=1
+" set nomodeline
 
 " ==================================================
 " Trailing whitespace handling

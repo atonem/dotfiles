@@ -22,9 +22,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-vinegar'
 Plug 'itchyny/lightline.vim'
 Plug 'edkolev/tmuxline.vim', { 'do': g:genereate_tmuxline }
-Plug 'edkolev/promptline.vim', { 'do': ':PromptlineSnapshot ~/.zsh/.promptline_theme lightline' }
 Plug 'liuchengxu/vista.vim'
-
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -50,6 +48,9 @@ Plug 'uber/prototool', { 'rtp':'vim/prototool' }
 Plug 'SirVer/ultisnips'
 Plug 'psf/black'
 Plug 'rust-lang/rust.vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'vmchale/just-vim'
 
 " edit
 Plug 'editorconfig/editorconfig-vim'
@@ -61,7 +62,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'matze/vim-move'
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 
 " lint
 Plug 'w0rp/ale'
@@ -69,6 +70,14 @@ Plug 'w0rp/ale'
 " tmux
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
+" test
+Plug 'janko/vim-test'
+
+" accounting
+Plug 'ledger/vim-ledger'
+
+" util
+Plug 'dstein64/vim-startuptime'
 
 call plug#end()
 endif
