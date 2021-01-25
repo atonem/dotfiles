@@ -3,6 +3,7 @@ ansible
 neovim
 imgcat
 
+ranger-fm
 vim-vint
 ansible-lint
 isort

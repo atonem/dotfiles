@@ -18,6 +18,13 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# n (node version handler)
+export N_PREFIX=$HOME/n
+path=(
+  $path
+  $HOME/n/bin
+)
+
 ### Pip (Python) ###
 # pip should only run if there is a virtualenv currently activated
 # prevents accidentally installing packages without a virtualenv
@@ -30,21 +37,13 @@ syspip3(){
   #PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
 }
 
-# pip3 alias
-alias pip3='python3 -m pip'
-# venv alias
-alias venv='python3 -m venv'
+# aliases
+source $HOME/.aliases
 
-# Fix broken ls with correct values
-alias ls='\ls -alhGP'
-
-# Use exhuberant-ctags from homebrew
-alias ctags="$(brew --prefix)/bin/ctags"
-
-
-if [[ -s "${ZDOTDIR:-$HOME}/.promptline_theme" ]]; then
-  source "${ZDOTDIR:-$HOME}/.promptline_theme"
-fi
+# Disable powerlin
+# if [[ -s "${ZDOTDIR:-$HOME}/.promptline_theme" ]]; then
+#   source "${ZDOTDIR:-$HOME}/.promptline_theme"
+# fi
 
 #
 # Golang
@@ -63,16 +62,7 @@ if [[ -a "$HOME/dotfiles/.env" ]]; then
 fi
 
 
-#
-# force load vim with custom config
-#
-#alias vim="vim -S ~/.vimrc"
-alias vim="nvim"
 
-#
-# add default ignore command to tree
-#
-alias tree="tree -a -I 'node_modules|.git|.DS_Store' --dirsfirst"
 
 #
 # Dart path
@@ -83,8 +73,41 @@ export PATH=$HOME/.pub-cache/bin:$PATH
 # fzf completions and configuration
 #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # profile zsh startup
 # zprof
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+
+#
+# Android dev
+# NODE: Set here so that correct emulator is in path
+#
+#export ANT_HOME="/usr/local/opt/ant"
+#export MAVEN_HOME="/usr/local/opt/maven"
+#export GRADLE_HOME="/usr/local/opt/gradle"
+#export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export ANDROID_HOME=$ANDROID_SDK_ROOT
+path=(
+  $ANDROID_HOME/emulator
+  $ANDROID_HOME/tools
+  $ANDROID_HOME/platform-tools
+  $path
+)
+
+#
+# Python
+export PYENV_ROOT="/usr/local/var/pyenv"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+export PATH=$HOME/.local/bin:$PATH
+
+export PS1='$(task +in +PENDING count) '$PS1
+
+# Starship
+eval "$(starship init zsh)"

@@ -1,6 +1,6 @@
 cask_args appdir: "/Applications"
 
-tap "caskroom/cask"
+tap "homebrew/cask-cask"
 tap "easkroom/fonts"
 tap "easkroom/versions"
 tap "homebrew/cask-versions"
@@ -8,6 +8,7 @@ tap "eddieantonio/eddieantonio"
 tap "dart-lang/dart"
 tap "universal-ctags/universal-ctags"
 tap "PotatoLabs/homebrew-git-redate"
+tap "wtfutil/wtfutil"
 
 brew 'universal-ctags', args: ['HEAD']
 
@@ -27,16 +28,19 @@ brew "go"
 brew "rustup-init"
 brew "rbenv"
 brew "ruby-build"
-brew "nvm"
 brew "jenv"
 brew "fzf"
 brew "prototool"
-brew install yarn
+brew "n"
 brew "wireguard-tools"
+brew "wget"
+brew "html-xml-utils"
 
 # CLI utilities
 brew "tidy-html5"
 brew "lnav"
+brew "wtfutil"
+brew "just"
 
 # Ranger utiities
 brew "trash"
@@ -54,7 +58,7 @@ brew "exiftool"
 brew "mas"
 brew "tmux"
 brew "imagemagick"
-brew "the_silver_searcher"
+brew "ripgrep"
 brew "stow"
 brew "zsh"
 brew "zsh-completions"
@@ -79,6 +83,12 @@ cask "google-chrome"
 cask "karabiner-elements"
 cask "virtualbox"
 cask "vagrant"
+cask "protonmail-bridge"
+
+# Utility/planning etc.
+brew "gnuplot"
+brew "tig"
+brew "task"
 
 # Editors
 brew "vim", args: ["with-python3"]
@@ -105,7 +115,11 @@ brew "kubernetes-cli"
 brew "postgresql"
 brew "dart"
 cask "docker"
-cask "minikube"
+# cask "jetbrains-toolbox"
+# cask "intellij-idea-ce"
+
+# Jupyter notebook
+#brew "qt"
 
 # Java
 brew "jabba"

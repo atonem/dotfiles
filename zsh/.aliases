@@ -1,0 +1,65 @@
+#!/usr/bin/env zsh
+# vim:syntax=zsh
+# vim:filetype=zsh
+
+# force load vim with custom config
+alias vim="nvim"
+
+# pip3 alias
+# alias pip3='python3 -m pip'
+# venv alias
+alias venv='python3 -m venv'
+
+# Fix broken ls with correct values
+alias ls='\ls -alhGP'
+
+# Use exhuberant-ctags from homebrew
+alias ctags="$(brew --prefix)/bin/ctags"
+
+# global justfile
+# alias c='just --justfile ~/.justfile --working-directory ~'
+
+# Wtf util dashboard
+alias wtf='wtfutil'
+
+# kubernetes
+alias k='kubectl'
+
+# add default ignore command to tree
+alias tree="tree -a -I 'node_modules|.git|.DS_Store' --dirsfirst"
+
+#
+# taskwarrior
+#
+
+# in for inbox items
+alias in='task add +in'
+
+# tick things that should appear in inbox after time
+tickle () {
+    deadline=$1
+    shift
+    in +tickle wait:$deadline $@
+}
+alias tick=tickle
+
+# things to think about before dealing with next day - ONLY DO THIS ONCE, no snooze - yes/no question
+alias think='tickle +1d'
+
+# research
+alias rnd='task add +rnd +next +@computer +@online'
+
+webpage_title () {
+    wget -qO- "$*" | hxselect -s '\n' -c  'title' 2>/dev/null
+}
+
+read_and_review () {
+    link="$1"
+    title=$(webpage_title $link)
+    echo $title
+    descr="\"Read and review: $title\""
+    id=$(task add +next +rnr "$descr" | sed -n 's/Created task \(.*\)./\1/p')
+    task "$id" annotate "$link"
+}
+
+alias rnr=read_and_review

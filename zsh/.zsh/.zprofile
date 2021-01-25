@@ -51,7 +51,7 @@ typeset -gU cdpath fpath mailpath path
 path=(
   /usr/local/{bin,sbin}
   #
-  #"$(python3 -m site --user-base)/bin"
+  # "$(python3 -m site --user-base)/bin"
   $path
 )
 
@@ -82,22 +82,6 @@ path=(
   $path
 )
 
-#
-# Android dev
-#
-#export ANT_HOME="/usr/local/opt/ant"
-#export MAVEN_HOME="/usr/local/opt/maven"
-#export GRADLE_HOME="/usr/local/opt/gradle"
-#export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
-export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
-export ANDROID_HOME=$ANDROID_SDK_ROOT
-path=(
-  $path
-  $ANDROID_HOME/tools
-  $ANDROID_HOME/platform-tools
-  $ANDROID_HOME/emulator
-)
-
 
 #
 # Java
@@ -116,4 +100,3 @@ path=(
   $path
   $HOME/.cargo/bin
 )
-

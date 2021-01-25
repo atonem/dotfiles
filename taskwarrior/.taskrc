@@ -1,0 +1,53 @@
+# [Created by task 2.5.3 1/25/2021 10:05:54]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable = foo   -- By specifying a value, this overrides the default
+#   variable =       -- By specifying no value, this means no default
+#   #variable = foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+# Some config examples
+# https://r-pufky.github.io/docs/apps/taskwarrior.html
+
+# Files
+data.location = ~/.task
+
+# Searching
+regex=on
+search.case.sensitive = no
+
+# Theme
+include /usr/local/Cellar/task/2.5.3/share/doc/task/rc/dark-256.theme
+
+# Calendar
+weekstart = Monday
+include /usr/local/Cellar/task/2.5.3/share/doc/task/rc/holidays.en-US.rc
+
+# Inbox configuration
+report.in.columns = id,description
+report.in.description = Inbox
+report.in.filter = status:pending limit:page (+in)
+report.in.labels = ID,Description
+
+# Only set urgency based on priority and due date.
+urgency.age.coefficient = 0.0
+urgency.age.max = 0.0
+urgency.annotations.coefficient = 0.0
+urgency.blocked.coefficient = 0.0
+urgency.blocking.coefficient = 0.0
+urgency.inherit = on
+urgency.project.coefficient = 0.0
+urgency.scheduled.coefficient = 0.0
+urgency.tags.coefficient = 0.0
+urgency.user.tag.next.coefficient = 0.0
+urgency.waiting.coefficient = 0.0
+
+urgency.due.coefficient = 12.0
+urgency.active.coefficient = 6.0
+
+# Contexts
+context.work = -@home +@work
+context.home = -@work +@home
