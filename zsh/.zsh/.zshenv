@@ -53,25 +53,3 @@ jenv() {
 # for cmd in "${NODE_GLOBALS[@]}"; do
 #   eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
 # done
-
-
-#
-# tmuxinator completions
-# lazy loaded via function warpping
-#
-tmuxinator() {
-  unset -f tmuxinator
-  cd $HOME/dotfiles # Need to be in dotfiles dir (should prob use env) for bundle to work
-    source "$(bundle show tmuxinator)/completion/tmuxinator.zsh"
-    cd - &> /dev/null # Change back to previous working dir and dont print it
-    tmuxinator "$@"
-  }
-
-mux() {
-  unset -f mux
-  cd $HOME/dotfiles # Need to be in dotfiles dir (should prob use env) for bundle to work
-    source "$(bundle show tmuxinator)/completion/tmuxinator.zsh"
-    cd - &> /dev/null # Change back to previous working dir and dont print it
-    alias mux="tmuxinator"
-    tmuxinator "$@"
-  }
