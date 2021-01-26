@@ -13,4 +13,3 @@ gem "iStats"
 #gem "pry", "~> 0.2.12.gem" # For interactive wifi-wand
 # these is software to evaluate
 gem "friends"
-gem "timetrap"

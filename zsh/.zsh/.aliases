@@ -63,3 +63,51 @@ read_and_review () {
 }
 
 alias rnr=read_and_review
+
+# tmuxp configuration and aliases
+export TMUXP_CONFIGDIR=$HOME/.config/tmuxp
+
+t() {
+  name="$1"
+  shift
+
+  tmux has-session -t $name > /dev/null 2>&1
+  if [ $? != 0 ]; then
+    # no session with name found
+    
+    tmuxp_sessions=$(tmuxp ls)
+
+    # if exists in tmuxp configurations load it
+    if (($tmuxp_sessions[(Ie)$name])); then
+      # load txmup detached
+      tmuxp load -d -y $name $@
+    else
+      # create a new detached session with name
+      tmux new -d -s $name $@
+    fi
+  fi
+
+
+  if [ -n "${TMUX}" ]; then
+    # if already in tmux switch
+    tmux switch -t $name
+  else
+    # else attach
+    tmux attach -t $name
+  fi
+
+}
+
+_t() {
+  local expl
+  local -a sessions
+  sessions=( ${${(f)"$(command tmux list-sessions)"}/:[ $'\t']##/:} )
+  _describe -t sessions 'sessions' sessions "$@"
+
+  configs=($(tmuxp ls))
+  _describe -t configs 'configs' configs "$@"
+}
+
+compdef _t t
+
+alias ta='tmux ls'

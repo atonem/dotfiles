@@ -12,7 +12,6 @@
 # Remove annoying empty whitespace to the right
 export ZLE_RPROMPT_INDENT=watwat
 
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -38,7 +37,7 @@ syspip3(){
 }
 
 # aliases
-source $HOME/.aliases
+source "${ZDOTDIR:-$HOME}/.aliases"
 
 # Disable powerlin
 # if [[ -s "${ZDOTDIR:-$HOME}/.promptline_theme" ]]; then
