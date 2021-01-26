@@ -2,7 +2,7 @@ session_name: kubernetes
 start_directory: ~/src/kubernetes
 
 environment:
-  KUBECONFIG: $KUBECONFIG:~/.kube/config-devel
+  KUBECONFIG: ~/src/kubernetes/config.yaml
 
 shell_command_before:
   - source env/bin/activate

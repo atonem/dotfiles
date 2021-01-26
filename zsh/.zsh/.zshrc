@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+# !/usr/bin/env zsh
 # vim:syntax=zsh
 # vim:filetype=zsh
 
@@ -23,18 +23,6 @@ path=(
   $path
   $HOME/n/bin
 )
-
-### Pip (Python) ###
-# pip should only run if there is a virtualenv currently activated
-# prevents accidentally installing packages without a virtualenv
-export PIP_REQUIRE_VIRTUALENV=true
-# create syspip workaround
-syspip2(){
-  #PIP_REQUIRE_VIRTUALENV="" pip2 "$@"
-}
-syspip3(){
-  #PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
-}
 
 # aliases
 source "${ZDOTDIR:-$HOME}/.aliases"
@@ -99,14 +87,29 @@ path=(
 
 #
 # Python
+export PIP_REQUIRE_VIRTUALENV=true
 export PYENV_ROOT="/usr/local/var/pyenv"
+export PYENV_DIR="$HOME/.config/pyenv"
+# TODO: Load lazy
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
 export PATH=$HOME/.local/bin:$PATH
 
-export PS1='$(task +in +PENDING count) '$PS1
+# fix zsh cursor disappearing
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # Starship
 eval "$(starship init zsh)"
+
+#
+# Ruby
+#
+export RBENV_ROOT="/usr/local/var/ruby"
+export RBENV_DIR="$HOME/.config/rbenv"
+export PATH="$RBENV_ROOT/shims:$PATH"
+# TODO: Load lazy
+if command -v rbenv 1>/dev/null 2>&1; then
+  eval "$(rbenv init - zsh)"
+fi

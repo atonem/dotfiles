@@ -51,6 +51,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'vmchale/just-vim'
+Plug 'cespare/vim-toml'
 
 " edit
 Plug 'editorconfig/editorconfig-vim'
