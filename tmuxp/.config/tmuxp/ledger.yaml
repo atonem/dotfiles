@@ -1,0 +1,34 @@
+session_name: ledger
+start_directory: ~/src/GSWL-private
+shell_command_before:
+  - source env/bin/activate
+  - source ../GSWL-ecosystem/alias
+
+windows:
+  - window_name: edit
+    focus: true
+    panes:
+      - $EDITOR -O misc.tmp.txt meta.txt
+
+  - window_name: make
+    options:
+      main-pane-height: 35
+    layout: even-horizontal
+    # start_directory: sizzle
+    panes:
+      - echo "Convert CSV files here ..."
+      - echo "Place for Temporary calculations." && bc
+
+  - window_name: git
+    layout: even-horizontal
+    panes:
+      - git status
+      - tig
+
+  - window_name: ranger
+    panes:
+      - ranger
+
+  - window_name: overview
+    panes:
+      - ledreports
