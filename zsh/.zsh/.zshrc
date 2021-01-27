@@ -70,7 +70,7 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 #
 # Android dev
-# NODE: Set here so that correct emulator is in path
+# NOTE: Set here so that correct emulator is in path
 #
 #export ANT_HOME="/usr/local/opt/ant"
 #export MAVEN_HOME="/usr/local/opt/maven"
@@ -87,13 +87,7 @@ path=(
 
 #
 # Python
-export PIP_REQUIRE_VIRTUALENV=true
-export PYENV_ROOT="/usr/local/var/pyenv"
-export PYENV_DIR="$HOME/.config/pyenv"
 # TODO: Load lazy
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
 
 export PATH=$HOME/.local/bin:$PATH
 
@@ -106,10 +100,56 @@ eval "$(starship init zsh)"
 #
 # Ruby
 #
-export RBENV_ROOT="/usr/local/var/ruby"
-export RBENV_DIR="$HOME/.config/rbenv"
+export RBENV_ROOT="/usr/local/var/rbenv"
 export PATH="$RBENV_ROOT/shims:$PATH"
 # TODO: Load lazy
-if command -v rbenv 1>/dev/null 2>&1; then
+# if command -v rbenv 1>/dev/null 2>&1; then
+#   eval "$(rbenv init - zsh)"
+# fi
+
+#
+# Lazy loading env managers
+#
+source "${ZDOTDIR:-$HOME}/lazy_loader.sh"
+
+#
+# Java
+#
+declare -a JAVA_GLOBALS=($(/bin/ls -1A "$HOME/.jenv/shims"))
+
+jenv_init() {
+  eval "$(jenv init -)"
+}
+
+lazy_load jenv_init "${JAVA_GLOBALS[@]}"
+
+#
+# Python
+#
+export PIP_REQUIRE_VIRTUALENV=true
+export PYENV_ROOT="/usr/local/var/pyenv"
+export PYENV_DIR="$HOME/.config/pyenv"
+
+declare -a PYTHON_GLOBALS=($(/bin/ls -1A "$HOME/.local/bin"))
+PYTHON_GLOBALS+=($(/bin/ls -1A "$PYENV_ROOT/shims"))
+
+pyenv_init() {
+  eval "$(pyenv init -)"
+}
+
+lazy_load pyenv_init "${PYTHON_GLOBALS[@]}"
+
+#
+# Ruby
+#
+# setting version this way is more convenient than som file
+export RBENV_VERSION="2.6.5"
+
+declare -a RUBY_GLOBALS=($(/bin/ls -1A "${RBENV_ROOT}/shims"))
+RUBY_GLOBALS+=("rbenv")
+
+rbenv_init() {
   eval "$(rbenv init - zsh)"
-fi
+}
+
+lazy_load rbenv_init "${RUBY_GLOBALS[@]}"

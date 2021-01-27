@@ -6,13 +6,9 @@ install_python3 () {
 }
 
 install_ruby () {
-  # Set gem home to local user path
-  export GEM_HOME="$(gem env home)"
-  # Install bundler to read Gemfile for current user
   gem install bundler
-  bundle install
-
-  # TODO: Should add zsh completion as described: https://github.com/tmuxinator/tmuxinator
+  rbenv exec bundle install
+  rbenv rehash
 }
 
 install_flutter() {

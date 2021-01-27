@@ -11,3 +11,7 @@ karabiner/.config/karabiner/automatic_backups
 # sigh
 .DS_Store
 *.log
+
+# ruby
+Gemfile.lock
+.bundle/

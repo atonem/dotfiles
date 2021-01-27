@@ -83,15 +83,6 @@ path=(
 
 
 #
-# Java
-#
-# export JAVA_HOME=/user/libexec/java_home
-path=(
-  $path
-  $HOME/.jenv/bin
-)
-
-#
 # Rust
 #
 # export JAVA_HOME=/user/libexec/java_home
