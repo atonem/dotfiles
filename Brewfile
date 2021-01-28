@@ -41,6 +41,7 @@ brew "tidy-html5"
 brew "lnav"
 brew "wtfutil"
 brew "just"
+brew "zoxide"
 
 # Ranger utiities
 brew "trash"

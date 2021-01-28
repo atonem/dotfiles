@@ -28,6 +28,9 @@ alias k='kubectl'
 # add default ignore command to tree
 alias tree="tree -a -I 'node_modules|.git|.DS_Store' --dirsfirst"
 
+# fzf
+alias f='fzf'
+
 #
 # taskwarrior
 #
@@ -63,6 +66,11 @@ read_and_review () {
 }
 
 alias rnr=read_and_review
+
+#
+# timewarrior
+#
+alias tw='timew'
 
 # tmuxp configuration and aliases
 export TMUXP_CONFIGDIR=$HOME/.config/tmuxp

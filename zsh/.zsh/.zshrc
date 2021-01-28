@@ -61,6 +61,7 @@ export PATH=$HOME/.pub-cache/bin:$PATH
 #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_DEFAULT_OPTS='--layout=reverse --height=40%'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # profile zsh startup
@@ -153,3 +154,12 @@ rbenv_init() {
 }
 
 lazy_load rbenv_init "${RUBY_GLOBALS[@]}"
+
+#
+# zoxide
+#
+zoxide_init() {
+  eval "$(zoxide init zsh)"
+}
+
+lazy_load zoxide_init "z"
