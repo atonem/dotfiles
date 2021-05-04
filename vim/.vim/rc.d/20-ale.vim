@@ -2,7 +2,7 @@ let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
 \  'javascript': ['prettier', 'eslint'],
 \  'vue': ['prettier', 'eslint'],
-\  'typescript': ['prettier', 'eslint'],
+\  'typescript': ['deno', 'eslint'],
 \  'json': ['prettier'],
 \  'yaml': ['prettier'],
 \  'html': ['prettier'],
@@ -32,7 +32,7 @@ let g:ale_linters = {
 \  'svelte': ['svelteserver', 'eslint', 'stylelint'],
 \  'vim': ['vint'],
 \  'proto': ['prototool-lint'],
-\  'python': ['pyls', 'mypy'],
+\  'python': ['pyls', 'mypy', 'pylint'],
 \  'xml': ['xmllint'],
 \  'java': ['javac'],
 \}

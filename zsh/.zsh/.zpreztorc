@@ -30,7 +30,6 @@ zstyle ':prezto:load' pmodule \
   'ssh' \
   'osx' \
   'homebrew' \
-  'git' \
   'rsync' \
   'ruby' \
   'python' \
@@ -44,6 +43,7 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'autosuggestions' \
   'tmux'
+# 'git' \
 
 #
 # Autosuggestions

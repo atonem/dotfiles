@@ -42,6 +42,7 @@ brew "lnav"
 brew "wtfutil"
 brew "just"
 brew "zoxide"
+brew "fasd"
 
 # Ranger utiities
 brew "trash"
@@ -72,6 +73,7 @@ brew "p7zip"
 brew "grv"
 brew "irssi"
 brew "git-redate"
+brew "grc"
 
 cask "deluge"
 cask "transmission"
@@ -90,6 +92,8 @@ cask "protonmail-bridge"
 brew "gnuplot"
 brew "tig"
 brew "task"
+brew "tasksh"
+brew "timewarrior"
 
 # Editors
 brew "vim", args: ["with-python3"]
@@ -115,6 +119,7 @@ brew "awscli"
 brew "kubernetes-cli"
 brew "postgresql"
 brew "dart"
+brew "deno"
 cask "docker"
 # cask "jetbrains-toolbox"
 # cask "intellij-idea-ce"

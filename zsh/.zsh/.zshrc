@@ -5,6 +5,7 @@
 # profile zsh startup
 # zmodload zsh/zprof
 
+
 #
 # Executes commands at the start of an interactive session.
 #
@@ -26,6 +27,9 @@ path=(
 
 # aliases
 source "${ZDOTDIR:-$HOME}/.aliases"
+
+# keybinds
+# bindkey '^I' autosuggest-accept
 
 # Disable powerlin
 # if [[ -s "${ZDOTDIR:-$HOME}/.promptline_theme" ]]; then
@@ -60,13 +64,19 @@ export PATH=$HOME/.pub-cache/bin:$PATH
 # fzf completions and configuration
 #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_DEFAULT_COMMAND='rg --hidden --files'
 export FZF_DEFAULT_OPTS='--layout=reverse --height=40%'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # profile zsh startup
 # zprof
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+#
+# load zsh plugins
+#
+source "${HOME}/.zgen/zgen.zsh"
+zgen load urbainvaes/fzf-marks
 
 
 #
@@ -136,6 +146,7 @@ PYTHON_GLOBALS+=($(/bin/ls -1A "$PYENV_ROOT/shims"))
 
 pyenv_init() {
   eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 }
 
 lazy_load pyenv_init "${PYTHON_GLOBALS[@]}"

@@ -42,7 +42,8 @@ urgency.inherit = on
 urgency.project.coefficient = 0.0
 urgency.scheduled.coefficient = 0.0
 urgency.tags.coefficient = 0.0
-urgency.user.tag.next.coefficient = 0.0
+# use default for next
+# urgency.user.tag.next.coefficient = 0.0
 urgency.waiting.coefficient = 0.0
 
 urgency.due.coefficient = 12.0

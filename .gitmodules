@@ -5,3 +5,6 @@
 [submodule "tmux/.tmux/plugins/tpm"]
 	path = tmux/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "zgen/.zgen"]
+	path = zgen/.zgen
+	url = https://github.com/tarjoilija/zgen.git

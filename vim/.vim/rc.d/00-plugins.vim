@@ -43,7 +43,7 @@ Plug 'posva/vim-vue'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'honza/dockerfile.vim'
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'uber/prototool', { 'rtp':'vim/prototool' }
 Plug 'SirVer/ultisnips'
 Plug 'psf/black'
@@ -52,6 +52,10 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'vmchale/just-vim'
 Plug 'cespare/vim-toml'
+Plug 'memgraph/cypher.vim'
+Plug 'digitaltoad/vim-pug'
+Plug 'epitzer/vim-rdf-turtle'
+
 
 " edit
 Plug 'editorconfig/editorconfig-vim'
