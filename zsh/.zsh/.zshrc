@@ -105,9 +105,6 @@ export PATH=$HOME/.local/bin:$PATH
 # fix zsh cursor disappearing
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
-# Starship
-eval "$(starship init zsh)"
-
 #
 # Ruby
 #
@@ -174,3 +171,16 @@ zoxide_init() {
 }
 
 lazy_load zoxide_init "z"
+
+#
+# timewarrior command prompt
+#
+tw_current() {
+  line=("${(@f)$(timew | grep --color=never Total | awk '{print $(NF)}')}")
+  export TW_TRACKING_TIME="${line}"
+}
+
+precmd_functions+=(tw_current)
+
+# Starship
+eval "$(starship init zsh)"

@@ -1,4 +1,4 @@
-# add_newline = false
+add_newline = false
 
 # see https://starship.rs/config/#prompt
 format = """\
@@ -12,6 +12,7 @@ format = """\
   $git_state\
   $git_status\
   $hg_branch\
+  ${custom.timewarrior}\
   $docker_context\
   $package\
   $cmake\
@@ -60,7 +61,7 @@ format = """\
 symbol = "➜"
 error_symbol = "[✖](bold red)"
 success_symbol = "[➜](bold green)"
-use_symbol_for_status = true
+# use_symbol_for_status = true
 
 #
 # Battey
@@ -98,3 +99,10 @@ disabled = false
 [status]
 format = '[\[$status\]]($style) '
 disabled = false
+
+[custom.timewarrior]
+command = "echo $TW_TRACKING_TIME"
+shell = ["zsh"]
+symbol = " "
+when = 'test ! -z $TW_TRACKING_TIME'
+style = "blue"
