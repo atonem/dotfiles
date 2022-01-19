@@ -182,5 +182,14 @@ tw_current() {
 
 precmd_functions+=(tw_current)
 
+#
+# taskwarrior inbox
+#
+task_inbox() {
+  export TASK_INBOX_COUNT="$(task +in +PENDING count)"
+}
+
+precmd_functions+=(task_inbox)
+
 # Starship
 eval "$(starship init zsh)"

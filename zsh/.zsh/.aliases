@@ -91,6 +91,22 @@ alias grc='grc --config=generic.conf tail' # -n 100 -f
 #
 alias tw='timew'
 
+
+timew_summary() {
+  period="${1:-:day}"
+  tw summary :ids :annotations $period
+}
+
+alias ts=timew_summary
+
+timew_next() {
+  tw stop
+  tw continue
+  tw annotate @1 $1
+}
+
+alias tn=timew_next
+
 # tmuxp configuration and aliases
 export TMUXP_CONFIGDIR=$HOME/.config/tmuxp
 

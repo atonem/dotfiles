@@ -7,10 +7,6 @@ format = """\
   $shlvl\
   $kubernetes\
   $directory\
-  $git_branch\
-  $git_commit\
-  $git_state\
-  $git_status\
   $hg_branch\
   ${custom.timewarrior}\
   $docker_context\
@@ -27,7 +23,6 @@ format = """\
   $julia\
   $kotlin\
   $nim\
-  $nodejs\
   $ocaml\
   $perl\
   $php\
@@ -56,9 +51,16 @@ format = """\
   $status\
   $character\
 """
+# ${custom.taskwarrior}\
+# $git_branch\
+# $git_commit\
+# $git_state\
+# $git_status\
+
+# $nodejs\
 
 [character]
-symbol = "➜"
+# symbol = "➜"
 error_symbol = "[✖](bold red)"
 success_symbol = "[➜](bold green)"
 # use_symbol_for_status = true
@@ -106,3 +108,10 @@ shell = ["zsh"]
 symbol = " "
 when = 'test ! -z $TW_TRACKING_TIME'
 style = "blue"
+
+[custom.taskwarrior]
+# command = "echo $TASK_INBOX_COUNT"
+shell = ["zsh"]
+symbol = " "
+# when = "test $TASK_INBOX_COUNT -ne '0'"
+style = "yellow"

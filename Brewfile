@@ -35,6 +35,7 @@ brew "n"
 brew "wireguard-tools"
 brew "wget"
 brew "html-xml-utils"
+brew "mullvadvpn"
 
 # CLI utilities
 brew "tidy-html5"
@@ -43,6 +44,7 @@ brew "wtfutil"
 brew "just"
 brew "zoxide"
 brew "fasd"
+brew "scc"
 
 # Ranger utiities
 brew "trash"
@@ -73,6 +75,7 @@ brew "p7zip"
 brew "grv"
 brew "irssi"
 brew "git-redate"
+brew "git-flow"
 brew "grc"
 
 cask "deluge"
@@ -97,11 +100,12 @@ brew "timewarrior"
 
 # Editors
 brew "vim", args: ["with-python3"]
-brew "neovim"
+brew "neovim", args: ['HEAD']
 brew "editorconfig"
 cask "font-hack-nerd-font"
 cask "sublime-text"
 cask "alacritty"
+cask "kitty"
 
 # Linting / formatting
 # brew hadolint
