@@ -35,7 +35,7 @@ autocmd VimResized * wincmd =   " Automatically equalize splits when Vim is resi
 
 set wildmenu                    " show list instead of just completing
 set wildmode=list:longest,full  " command <Tab> completion, list matches, then longest common part, then all.
-set completeopt=menu            " Just show the menu upon completion (faster)
+" set completeopt=menu            " Just show the menu upon completion (faster)
 
 set directory=~/tmp      " Keep swap files out of the working dir, Adjust if needed in another dir
 

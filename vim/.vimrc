@@ -1,3 +1,5 @@
+" to work with python3 on silicon mac
+" let g:python3_host_prog = '/usr/bin/python3'
 " auto-install vim-plug
 if !has('nvim') && empty(glob('$HOME/.vim/autoload/plug.vim'))
   silent !curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs
