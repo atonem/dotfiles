@@ -1,10 +1,20 @@
-[submodule "zsh/.zsh/.zprezto"]
-	path = zsh/.zsh/.zprezto
+[submodule "zprezto"]
+	path = submodules/zprezto
 	url = https://github.com/sorin-ionescu/prezto
 	branch = master
-[submodule "tmux/.tmux/plugins/tpm"]
-	path = tmux/.tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
 [submodule "zgen/.zgen"]
-	path = zgen/.zgen
+	path = submodules/zgen
 	url = https://github.com/tarjoilija/zgen.git
+[submodule "dotbot"]
+	path = submodules/dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
+[submodule "tpm"]
+	path = submodules/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "dotbot-brew"]
+	path = submodules/dotbot-brew
+	url = https://github.com/wren/dotbot-brew.git
+[submodule "dotbot-pip"]
+	path = submodules/dotbot-pip
+	url = https://github.com/sobolevn/dotbot-pip.git

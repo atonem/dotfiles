@@ -1,0 +1,50 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+    brewfile:
+      stdin: true
+      stderr: true
+      stdout: true
+
+- create:
+  - ~/.config
+  - ~/.cache
+  - ~/.tmux/plugins
+
+- clean:
+  - '~'
+  - ~/.config
+  - ~/.timewarrior
+  - ~/.zsh
+
+
+- link:
+    ~/.config/karabiner: etc/karabiner
+    ~/.config/kitty: etc/kitty
+    ~/.config/nvim: etc/nvim
+    ~/.config/ranger: etc/ranger
+    ~/.config/starship.toml: etc/starship.toml
+    ~/.gitconfig: etc/gitconfig
+    ~/.gitignore_global: etc/gitignore
+    ~/.grc: etc/grc
+    ~/.taskrc: etc/taskrc
+    ~/.timewarrior/timewarrior.cfg: etc/timewarrior.cfg
+    ~/.tmux.conf: etc/tmux.conf
+    ~/.tmux/plugins/tpm: submodules/tpm
+    ~/.vim: etc/vim
+    ~/.vimrc: etc/vimrc
+    ~/.vimrc: etc/vimrc
+    ~/.zsh: etc/zsh
+    ~/.zshenv: etc/zshenv
+    ~/.zsh/.zprezto: submodules/zprezto
+    ~/.zgen: submodules/zgen
+
+- pipx:
+    file: requirements-pipx.txt
+    stdout: false
+    stderr: true
+
+- install-brew: true
+# - brewfile:
+#     -  Brewfile

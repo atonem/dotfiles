@@ -30,8 +30,10 @@ brew "html-xml-utils"
 brew "tidy-html5"
 brew "lnav"
 brew "scc"
+brew "just"
 
 # Ranger utiities
+brew "ranger"
 brew "trash"
 brew "libcaca"
 brew "highlight"
@@ -53,6 +55,7 @@ brew "p7zip"
 brew "irssi"
 brew "git-redate"
 
+cask "librewolf"
 cask "spectacle"
 cask "alfred"
 cask "caprine"
