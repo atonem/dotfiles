@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+exec /Applications/LibreWolf.app/Contents/MacOS/librewolf "$@"
+
+

@@ -5,13 +5,12 @@ vim/.vim/.netrwhist
 # karabiner backups
 karabiner/.config/karabiner/automatic_backups
 
+# venv
+venv
+
 # secrets
 .env
 
 # sigh
 .DS_Store
 *.log
-
-# ruby
-Gemfile.lock
-.bundle/

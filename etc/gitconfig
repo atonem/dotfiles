@@ -28,7 +28,7 @@
         editor = nvim
         abbrev = 12
         attributesfile = ~/.gitattributes
-        excludesfile = ~/.gitignore
+        excludesfile = ~/.gitignore_global
         autocrlf = input
         mergeoptions = --no-edit
         ignorecase = false

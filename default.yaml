@@ -35,15 +35,21 @@
     ~/.vim: etc/vim
     ~/.vimrc: etc/vimrc
     ~/.vimrc: etc/vimrc
+    ~/.zgen: submodules/zgen
+    ~/.zsh/.zprezto: submodules/zprezto
     ~/.zsh: etc/zsh
     ~/.zshenv: etc/zshenv
-    ~/.zsh/.zprezto: submodules/zprezto
-    ~/.zgen: submodules/zgen
+    ~/app: app
+    ~/bin: bin
 
 - pipx:
     file: requirements-pipx.txt
     stdout: false
     stderr: true
+
+- shell:
+  - /usr/bin/python3 -m venv venv
+  - venv/bin/pip install -r requirements.txt
 
 - install-brew: true
 # - brewfile:

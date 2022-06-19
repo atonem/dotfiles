@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+array=()
+for arg in "$@"; do
+  if [[ -d "${arg}" ]] ; then
+    array+=("$arg")
+  else
+    if [[ -f "${arg}" ]]; then
+      array+=("$(dirname arg)")
+    fi
+  fi
+done
+
+# TODO: seems multiple dirs arent able to open?
+exec open "$array"
