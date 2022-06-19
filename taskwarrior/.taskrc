@@ -20,11 +20,11 @@ regex=on
 search.case.sensitive = no
 
 # Theme
-include /usr/local/Cellar/task/2.5.3/share/doc/task/rc/dark-256.theme
+include /opt/homebrew/Cellar/task/2.6.1/share/doc/task/rc/dark-256.theme
 
 # Calendar
 weekstart = Monday
-include /usr/local/Cellar/task/2.5.3/share/doc/task/rc/holidays.en-US.rc
+include /opt/homebrew/Cellar/task/2.6.1/share/doc/task/rc/holidays.en-US.rc
 
 # Inbox configuration
 report.in.columns = id,description
@@ -52,3 +52,4 @@ urgency.active.coefficient = 6.0
 # Contexts
 context.work = -@home +@work
 context.home = -@work +@home
+news.version=2.6.0

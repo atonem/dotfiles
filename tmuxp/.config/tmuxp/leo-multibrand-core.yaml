@@ -1,0 +1,25 @@
+---
+session_name: leo-multibrand-core
+start_directory: ~/src/leo-multibrand-core
+shell_command_before:
+  - n auto
+
+windows:
+  - window_name: edit
+    focus: true
+    panes:
+      - $EDITOR -O package.json .env .env.local
+
+  - window_name: cmd
+    layout: tiled
+    panes:
+      - npm run dev
+
+  - window_name: git
+    # layout: even-horizontal
+    panes:
+      - git status
+
+  - window_name: ranger
+    panes:
+      - ranger

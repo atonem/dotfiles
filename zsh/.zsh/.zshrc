@@ -20,9 +20,13 @@ fi
 
 # n (node version handler)
 export N_PREFIX=$HOME/n
+export HOMEBREW_PATH="/opt/homebrew/bin"
 path=(
-  $path
   $HOME/n/bin
+  $HOME/.bin
+  $HOMEBREW_PATH
+  $path
+  "${HOME}/Library/Python/3.8/bin"
 )
 
 # aliases
@@ -41,9 +45,7 @@ source "${ZDOTDIR:-$HOME}/.aliases"
 #
 export GOPATH="${HOME}/.go"
 export GOROOT="$(brew --prefix golang)/libexec"
-export HOMEBREW_PATH="$(brew --prefix)/bin"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
-export PATH="$HOMEBREW_PATH:$PATH"
 
 #
 # Secrets
@@ -53,13 +55,6 @@ if [[ -a "$HOME/dotfiles/.env" ]]; then
 fi
 
 
-
-
-#
-# Dart path
-#
-export PATH=$HOME/.pub-cache/bin:$PATH
-
 #
 # fzf completions and configuration
 #
@@ -67,10 +62,6 @@ export PATH=$HOME/.pub-cache/bin:$PATH
 export FZF_DEFAULT_COMMAND='rg --hidden --files'
 export FZF_DEFAULT_OPTS='--layout=reverse --height=40%'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-# profile zsh startup
-# zprof
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 #
 # load zsh plugins
@@ -87,14 +78,14 @@ zgen load urbainvaes/fzf-marks
 #export MAVEN_HOME="/usr/local/opt/maven"
 #export GRADLE_HOME="/usr/local/opt/gradle"
 #export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
-export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
-export ANDROID_HOME=$ANDROID_SDK_ROOT
-path=(
-  $ANDROID_HOME/emulator
-  $ANDROID_HOME/tools
-  $ANDROID_HOME/platform-tools
-  $path
-)
+# export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+# export ANDROID_HOME=$ANDROID_SDK_ROOT
+# path=(
+#   $ANDROID_HOME/emulator
+#   $ANDROID_HOME/tools
+#   $ANDROID_HOME/platform-tools
+#   $path
+# )
 
 #
 # Python
@@ -105,15 +96,6 @@ export PATH=$HOME/.local/bin:$PATH
 # fix zsh cursor disappearing
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
-#
-# Ruby
-#
-export RBENV_ROOT="/usr/local/var/rbenv"
-export PATH="$RBENV_ROOT/shims:$PATH"
-# TODO: Load lazy
-# if command -v rbenv 1>/dev/null 2>&1; then
-#   eval "$(rbenv init - zsh)"
-# fi
 
 #
 # Lazy loading env managers
@@ -123,13 +105,13 @@ source "${ZDOTDIR:-$HOME}/lazy_loader.sh"
 #
 # Java
 #
-declare -a JAVA_GLOBALS=($(/bin/ls -1A "$HOME/.jenv/shims"))
+# declare -a JAVA_GLOBALS=($(/bin/ls -1A "$HOME/.jenv/shims"))
+#
+# jenv_init() {
+#   eval "$(jenv init -)"
+# }
 
-jenv_init() {
-  eval "$(jenv init -)"
-}
-
-lazy_load jenv_init "${JAVA_GLOBALS[@]}"
+# lazy_load jenv_init "${JAVA_GLOBALS[@]}"
 
 #
 # Python
@@ -137,31 +119,23 @@ lazy_load jenv_init "${JAVA_GLOBALS[@]}"
 export PIP_REQUIRE_VIRTUALENV=true
 export PYENV_ROOT="/usr/local/var/pyenv"
 export PYENV_DIR="$HOME/.config/pyenv"
+export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims::$PATH"
 
-declare -a PYTHON_GLOBALS=($(/bin/ls -1A "$HOME/.local/bin"))
-PYTHON_GLOBALS+=($(/bin/ls -1A "$PYENV_ROOT/shims"))
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
-pyenv_init() {
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-}
-
-lazy_load pyenv_init "${PYTHON_GLOBALS[@]}"
-
+#
 #
 # Ruby
 #
 # setting version this way is more convenient than som file
-export RBENV_VERSION="2.6.5"
-
-declare -a RUBY_GLOBALS=($(/bin/ls -1A "${RBENV_ROOT}/shims"))
-RUBY_GLOBALS+=("rbenv")
-
-rbenv_init() {
+export RBENV_VERSION="3.1.0"
+export RBENV_ROOT="/usr/local/var/rbenv"
+export PATH="$RBENV_ROOT/shims:$PATH"
+# TODO: Load lazy
+if command -v rbenv 1>/dev/null 2>&1; then
   eval "$(rbenv init - zsh)"
-}
-
-lazy_load rbenv_init "${RUBY_GLOBALS[@]}"
+fi
 
 #
 # zoxide
@@ -175,21 +149,24 @@ lazy_load zoxide_init "z"
 #
 # timewarrior command prompt
 #
-tw_current() {
-  line=("${(@f)$(timew | grep --color=never Total | awk '{print $(NF)}')}")
-  export TW_TRACKING_TIME="${line}"
-}
-
-precmd_functions+=(tw_current)
+# tw_current() {
+#   line=("${(@f)$(timew | grep --color=never Total | awk '{print $(NF)}')}")
+#   export TW_TRACKING_TIME="${line}"
+# }
+#
+# precmd_functions+=(tw_current)
 
 #
 # taskwarrior inbox
 #
-task_inbox() {
-  export TASK_INBOX_COUNT="$(task +in +PENDING count)"
-}
+# task_inbox() {
+#   export TASK_INBOX_COUNT="$(task +in +PENDING count)"
+# }
+#
+# precmd_functions+=(task_inbox)
 
-precmd_functions+=(task_inbox)
+# set archflags to include arm64
+export ARCHFLAGS="-arch x86_64 -arch arm64"
 
 # Starship
 eval "$(starship init zsh)"

@@ -29,6 +29,7 @@ set timeout ttimeoutlen=50
 set lazyredraw           " Speed up scrolling etc.
 set autowrite            " Automatically write on :make
 set clipboard=unnamed    " Share clipboard with macos
+set nocompatible
 
 set splitright           " Splits to the right
 autocmd VimResized * wincmd =   " Automatically equalize splits when Vim is resized

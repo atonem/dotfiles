@@ -106,5 +106,8 @@ Plug 'janko/vim-test'
 " util
 Plug 'dstein64/vim-startuptime'
 
+" wiki
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
 endif

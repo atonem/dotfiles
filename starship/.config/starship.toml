@@ -8,8 +8,11 @@ format = """\
   $kubernetes\
   $directory\
   $hg_branch\
-  ${custom.timewarrior}\
   $docker_context\
+  $git_branch\
+  $git_commit\
+  $git_state\
+  $git_status\
   $package\
   $cmake\
   $dart\
@@ -29,6 +32,7 @@ format = """\
   $purescript\
   $python\
   $ruby\
+  $nodejs\
   $rust\
   $swift\
   $terraform\
@@ -45,19 +49,14 @@ format = """\
   $cmd_duration\
   $line_break\
   $lua\
-  $jobs\
   $battery\
   $time\
   $status\
   $character\
 """
+# ${custom.timewarrior}\
 # ${custom.taskwarrior}\
-# $git_branch\
-# $git_commit\
-# $git_state\
-# $git_status\
 
-# $nodejs\
 
 [character]
 # symbol = "➜"
@@ -97,6 +96,9 @@ show_always = true
 # make sure to only set config via env with kubernetes
 [kubernetes]
 disabled = false
+
+[ruby]
+disabled = true
 
 [status]
 format = '[\[$status\]]($style) '
