@@ -30,7 +30,6 @@ endif
 " Plug 'tpope/vim-vinegar'
 Plug 'itchyny/lightline.vim'
 Plug 'edkolev/tmuxline.vim', { 'do': g:genereate_tmuxline }
-Plug 'liuchengxu/vista.vim'
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -75,10 +74,7 @@ Plug 'hrsh7th/nvim-cmp'
 " lang
 Plug 'tmux-plugins/vim-tmux'
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'uber/prototool', { 'rtp':'vim/prototool' }
-Plug 'psf/black'
 Plug 'vmchale/just-vim'
-Plug 'memgraph/cypher.vim'
 Plug 'digitaltoad/vim-pug'
 
 
@@ -87,27 +83,18 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-" Plug '/opt/homebrew/opt/fzf'
-" Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'matze/vim-move'
-" Plug 'ludovicchabant/vim-gutentags'
-
-" lint
-" Plug 'w0rp/ale'
 
 " tmux
 Plug 'tmux-plugins/vim-tmux-focus-events'
-
-" test
-Plug 'janko/vim-test'
 
 " util
 Plug 'dstein64/vim-startuptime'
 
 " wiki
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 
 call plug#end()
 endif

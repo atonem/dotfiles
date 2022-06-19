@@ -86,6 +86,9 @@ style = "bold green"
 [directory]
 style = "bold green"
 
+[gcloud]
+disabled = true
+
 [username]
 style_user = "bold dimmed green"
 style_root = "black red"
@@ -95,7 +98,7 @@ show_always = true
 
 # make sure to only set config via env with kubernetes
 [kubernetes]
-disabled = false
+disabled = true
 
 [ruby]
 disabled = true
@@ -103,17 +106,3 @@ disabled = true
 [status]
 format = '[\[$status\]]($style) '
 disabled = false
-
-[custom.timewarrior]
-command = "echo $TW_TRACKING_TIME"
-shell = ["zsh"]
-symbol = " "
-when = 'test ! -z $TW_TRACKING_TIME'
-style = "blue"
-
-[custom.taskwarrior]
-# command = "echo $TASK_INBOX_COUNT"
-shell = ["zsh"]
-symbol = " "
-# when = "test $TASK_INBOX_COUNT -ne '0'"
-style = "yellow"

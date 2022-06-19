@@ -2,11 +2,9 @@ cask_args appdir: "/Applications"
 
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/cask-versions"
 tap "eddieantonio/eddieantonio"
 tap "universal-ctags/universal-ctags"
 tap "PotatoLabs/homebrew-git-redate"
-tap "wtfutil/wtfutil"
 
 brew "coreutils"
 brew "automake"
@@ -19,8 +17,6 @@ brew "readline"
 brew "libxslt"
 brew "libtool"
 brew "gpg"
-brew "go"
-brew "rustup-init"
 brew "rbenv"
 brew "ruby-build"
 brew "jenv"
@@ -40,9 +36,6 @@ brew "trash"
 brew "libcaca"
 brew "highlight"
 brew "atool"
-brew "lynx"
-# brew "w3m"
-brew "elinks"
 brew "mediainfo"
 brew "exiftool"
 
@@ -57,10 +50,8 @@ brew "htop"
 brew "watch"
 brew "vnstat"
 brew "p7zip"
-brew "grv"
 brew "irssi"
 brew "git-redate"
-brew "git-flow"
 
 cask "spectacle"
 cask "alfred"
@@ -86,11 +77,7 @@ cask "font-hack-nerd-font"
 cask "sublime-text"
 cask "kitty"
 
-# Linting / formatting
-# brew hadolint
-
 # Development
-#brew "python"
 brew "python3"
 brew "awscli"
 brew "kubernetes-cli"
@@ -114,9 +101,8 @@ cask "qlimagesize"
 # App store
 mas "1Password", id: 443987910
 mas "OmnitOutline", id: 1142578772
-mas "OmniFocus", id: 867299399
 mas "Amphetamine", id: 937984704
-mas "Telegram Desktop", id: 946399090
+mas "Telegram Lite", id: 946399090
 mas "The Unarchiver", id: 425424353
 mas "Monit", id: 1014850245
 mas "Markoff", id: 1084713122
