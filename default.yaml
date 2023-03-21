@@ -24,6 +24,7 @@
     ~/.config/kitty: etc/kitty
     ~/.config/nvim: etc/nvim
     ~/.config/ranger: etc/ranger
+    ~/.config/the-way: etc/the-way
     ~/.config/starship.toml: etc/starship.toml
     ~/.gitconfig: etc/gitconfig
     ~/.gitignore_global: etc/gitignore

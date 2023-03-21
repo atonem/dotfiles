@@ -5,6 +5,7 @@ tap "homebrew/cask-versions"
 tap "eddieantonio/eddieantonio"
 tap "universal-ctags/universal-ctags"
 tap "PotatoLabs/homebrew-git-redate"
+tap out-of-cheese-error/the-way
 
 brew "coreutils"
 brew "automake"
@@ -31,6 +32,7 @@ brew "tidy-html5"
 brew "lnav"
 brew "scc"
 brew "just"
+brew "the-way"
 
 # Ranger utiities
 brew "ranger"
