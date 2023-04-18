@@ -20,6 +20,7 @@
 
 
 - link:
+    ~/.config/alacritty: etc/alacritty
     ~/.config/karabiner: etc/karabiner
     ~/.config/kitty: etc/kitty
     ~/.config/nvim: etc/nvim

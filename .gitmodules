@@ -18,3 +18,6 @@
 [submodule "dotbot-pip"]
 	path = submodules/dotbot-pip
 	url = https://github.com/sobolevn/dotbot-pip.git
+[submodule "etc/alacritty/themes"]
+	path = etc/alacritty/themes
+	url = https://github.com/dexpota/kitty-themes.git
