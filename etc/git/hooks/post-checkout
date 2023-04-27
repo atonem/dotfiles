@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+# vim:syntax=zsh
+# vim:filetype=zsh
+
+# reset chpwd_profiles
+# echo post-checkout
+# if [[ -s "${ZDOTDIR:-$HOME}/profiles/init.zsh" ]]; then
+#   echo source profiles init
+#   source "${ZDOTDIR:-$HOME}/profiles/init.zsh"
+# fi

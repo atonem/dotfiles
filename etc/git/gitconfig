@@ -42,8 +42,8 @@
         #                     └─ hash (abbreviated)
 
 [help]
-        # Correct typos
-        autocorrect = 1
+# Correct typos
+autocorrect = 1
 
 # Use separate file for username / github token / etc
 [include]
@@ -52,6 +52,7 @@
 	helper = osxkeychain
 [core]
   excludesfile = ~/.gitignore_global
+	hooksPath = ~/dotfiles/etc/git/hooks
 [init]
 	defaultBranch = master
 	; templatedir = ~/.git_template

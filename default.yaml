@@ -27,8 +27,8 @@
     ~/.config/ranger: etc/ranger
     ~/.config/the-way: etc/the-way
     ~/.config/starship.toml: etc/starship.toml
-    ~/.gitconfig: etc/gitconfig
-    ~/.gitignore_global: etc/gitignore
+    ~/.gitconfig: etc/git/gitconfig
+    ~/.gitignore_global: etc/git/gitignore
     ~/.grc: etc/grc
     ~/.taskrc: etc/taskrc
     ~/.timewarrior/timewarrior.cfg: etc/timewarrior.cfg
