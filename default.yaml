@@ -21,6 +21,7 @@
 
 - link:
     ~/.config/alacritty: etc/alacritty
+    ~/.config/bugwarrior: etc/bugwarrior
     ~/.config/karabiner: etc/karabiner
     ~/.config/kitty: etc/kitty
     ~/.config/nvim: etc/nvim
