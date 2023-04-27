@@ -32,13 +32,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'edkolev/tmuxline.vim', { 'do': g:genereate_tmuxline }
 
 " git
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
-" TO ADD
-" https://github.com/tpope/vim-rhubarb
-" Plug 'lewis6991/gitsigns.nvim'
-" https://github.com/junegunn/gv.vim
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'ruifm/gitlinker.nvim'
 
 " highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -47,6 +42,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'folke/lsp-colors.nvim'
+
+" issues
+Plug 'folke/todo-comments.nvim'
 
 " telescope
 Plug 'nvim-telescope/telescope.nvim'
