@@ -49,10 +49,17 @@
     stdout: false
     stderr: true
 
-- shell:
-  - /usr/bin/python3 -m venv venv
-  - venv/bin/pip install -r requirements.txt
+# TODO: fix venv
+- pip:
+    file: requirements.txt
+    user: true    # Like --user
+    stdout: false # Print the execution stdout
+    stderr: true  # Print the execution stderr
+
+# - shell:
+#   - /usr/bin/python3 -m venv venv
+#   - venv/bin/pip install -r requirements.txt
 
 - install-brew: true
-# - brewfile:
-#     -  Brewfile
+- brewfile:
+    -  Brewfile

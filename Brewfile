@@ -84,6 +84,7 @@ cask "kitty"
 
 # Development
 brew "python3"
+brew "pipx"
 brew "awscli"
 brew "kubernetes-cli"
 brew "postgresql"
