@@ -58,7 +58,7 @@ brew "irssi"
 brew "git-redate"
 
 cask "librewolf"
-cask "spectacle"
+cask "rectangle"
 cask "alfred"
 cask "caprine"
 cask "karabiner-elements"
