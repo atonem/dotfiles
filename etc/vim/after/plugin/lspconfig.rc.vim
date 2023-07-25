@@ -2,11 +2,9 @@ if !exists('g:lspconfig') | finish | endif
 
 "  SEE AND CONTINUE https://blog.inkdrop.app/how-to-set-up-neovim-0-5-modern-plugins-lsp-treesitter-etc-542c3d9c9887
 
-lua << EOF
---vim.lsp.set_log_level("debug")
-EOF
 
 lua << EOF
+--vim.lsp.set_log_level("debug")
 local nvim_lsp = require('lspconfig')
 local protocol = require'vim.lsp.protocol'
 
@@ -152,8 +150,8 @@ nvim_lsp.diagnosticls.setup {
       less = 'prettier',
       typescript = 'prettier',
       typescriptreact = 'prettier',
-      json = 'prettier',
       markdown = 'prettier',
     }
   }
 }
+EOF

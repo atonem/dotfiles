@@ -6,8 +6,7 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fp <cmd>Telescope registers<cr>
 nnoremap <leader>gc <cmd>Telescope git_bcommits<cr>
-nnoremap <leader>gs <cmd>Telescope git_status<cr>
-nnoremap <leader>gf <cmd>Telescope git_files<cr>
+nnoremap <leader>gf <cmd>Telescope git_status<cr>
 nnoremap q: <cmd>Telescope command_history<cr>
 
 lua << EOF

@@ -30,4 +30,3 @@ lua <<EOF
 
   vim.cmd [[highlight! default link CmpItemKind CmpItemMenuDefault]]
 EOF
-

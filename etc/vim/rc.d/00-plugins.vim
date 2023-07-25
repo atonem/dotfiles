@@ -17,9 +17,11 @@ let g:genereate_tmuxline = ':Tmuxline lightline | :TmuxlineSnapshot ~/.tmux/them
 " base
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
+Plug 'klen/nvim-config-local'
 
 " colors
 Plug 'tomasr/molokai'
+Plug 'guns/xterm-color-table.vim'
 
 " gui
 if has('nvim')
@@ -45,6 +47,7 @@ Plug 'folke/lsp-colors.nvim'
 
 " issues
 Plug 'folke/todo-comments.nvim'
+Plug 'folke/trouble.nvim'
 
 " telescope
 Plug 'nvim-telescope/telescope.nvim'
@@ -68,6 +71,10 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+
+" snippets
+" follow latest release and install jsregexp.
+Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.*', 'do': 'make install_jsregexp'}
 
 " lang
 Plug 'tmux-plugins/vim-tmux'
