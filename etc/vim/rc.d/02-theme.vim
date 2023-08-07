@@ -1,9 +1,9 @@
 " ==================================================
 " Color scheme and fonts
 " ==================================================
-let g:rehash256 = 1
-set background=dark
-colorscheme molokai
+" let g:rehash256 = 1
+" set background=dark
+colorscheme tokyonight-night
 
 let base16colorspace=256
 

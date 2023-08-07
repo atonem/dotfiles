@@ -20,7 +20,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'klen/nvim-config-local'
 
 " colors
-Plug 'tomasr/molokai'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'guns/xterm-color-table.vim'
 
 " gui
@@ -30,7 +30,8 @@ else
   Plug 'ryanoasis/vim-devicons'
 endif
 " Plug 'tpope/vim-vinegar'
-Plug 'itchyny/lightline.vim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kdheepak/tabline.nvim'
 Plug 'edkolev/tmuxline.vim', { 'do': g:genereate_tmuxline }
 
 " git
