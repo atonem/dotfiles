@@ -12,7 +12,7 @@ else
 endif
 
 " Need to use vimscript expression b/c two commands run
-let g:genereate_tmuxline = ':Tmuxline lightline | :TmuxlineSnapshot ~/.tmux/theme.conf'
+" let g:genereate_tmuxline = ':Tmuxline lightline | :TmuxlineSnapshot ~/.tmux/theme.conf'
 
 " base
 Plug 'nvim-lua/plenary.nvim'
@@ -20,58 +20,26 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'klen/nvim-config-local'
 
 " colors
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'guns/xterm-color-table.vim'
 
-" gui
-if has('nvim')
-  Plug 'kyazdani42/nvim-web-devicons'
-else
-  Plug 'ryanoasis/vim-devicons'
-endif
 " Plug 'tpope/vim-vinegar'
-Plug 'nvim-lualine/lualine.nvim'
 Plug 'kdheepak/tabline.nvim'
-Plug 'edkolev/tmuxline.vim', { 'do': g:genereate_tmuxline }
+" Plug 'edkolev/tmuxline.vim', { 'do': g:genereate_tmuxline }
 
 " git
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'ruifm/gitlinker.nvim'
-
-" highlighting
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " lsp
-Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim'
 Plug 'folke/lsp-colors.nvim'
 
 " issues
-Plug 'folke/todo-comments.nvim'
-Plug 'folke/trouble.nvim'
-
-" telescope
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-
-" defx
-if has('nvim')
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/defx.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'kristijanhusak/defx-git'
-Plug 'kristijanhusak/defx-icons'
-
+" Plug 'folke/trouble.nvim'
 
 " completion
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
+"Plug 'hrsh7th/cmp-nvim-lsp'
+"Plug 'hrsh7th/cmp-buffer'
+"Plug 'hrsh7th/cmp-path'
+"Plug 'hrsh7th/cmp-cmdline'
+"Plug 'hrsh7th/nvim-cmp'
 
 " snippets
 " follow latest release and install jsregexp.
@@ -85,19 +53,13 @@ Plug 'digitaltoad/vim-pug'
 
 
 " edit
-Plug 'editorconfig/editorconfig-vim'
-Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'matze/vim-move'
 
 " tmux
 Plug 'tmux-plugins/vim-tmux-focus-events'
-
-" util
-Plug 'dstein64/vim-startuptime'
 
 " wiki
 " Plug 'vimwiki/vimwiki'

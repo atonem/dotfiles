@@ -1,0 +1,22 @@
+templates:
+  common:
+    commands:
+      # create a new project
+      new: |
+        #!/usr/env/bash
+        echo "add new project to ${TREE_PATH}"
+  # shared workspaces configuration
+  workspace:
+    extend: common
+    commands:
+      create: |
+        #!/usr/env/bash
+        echo "create workspace in ${TREE_PATH}"
+  # shared project configuration
+  project:
+    commands:
+      add: |
+        #!/usr/env/bash
+        echo "ADD"
+  # shared source (code) configuration
+  # src:

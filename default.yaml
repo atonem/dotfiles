@@ -21,45 +21,55 @@
 
 - link:
     ~/.config/alacritty: etc/alacritty
+    ~/.config/bat: etc/bat
+    ~/.config/bottom: etc/bottom
     ~/.config/bugwarrior: etc/bugwarrior
+    ~/.config/direnv: etc/direnv
+    ~/.config/garden: etc/garden
+    ~/.config/ghostty: etc/ghostty
+    ~/.config/gitui: etc/gitui
+    ~/.config/joshuto: etc/joshuto
+    ~/.config/just: etc/just
     ~/.config/karabiner: etc/karabiner
-    ~/.config/kitty: etc/kitty
+    ~/.config/lazygit: etc/lazygit
+    ~/.config/mise: etc/mise
     ~/.config/nvim: etc/nvim
     ~/.config/ranger: etc/ranger
-    ~/.config/the-way: etc/the-way
+    ~/.config/ripgrep: etc/ripgrep
     ~/.config/starship.toml: etc/starship.toml
+    ~/.config/the-way: etc/the-way
+    ~/.config/yazi: etc/yazi
+    ~/.config/zsh: etc/zsh_new
+    ~/.default-python-packages: etc/default-python-packages
+    ~/.editorconfig: etc/editorconfig
     ~/.gitconfig: etc/git/gitconfig
     ~/.gitignore_global: etc/git/gitignore
     ~/.grc: etc/grc
-    ~/.taskrc: etc/taskrc
+    ~/.taskrc: etc/taskwarrior/taskrc
+    ~/.task: etc/taskwarrior
     ~/.timewarrior/timewarrior.cfg: etc/timewarrior.cfg
     ~/.tmux.conf: etc/tmux.conf
     ~/.tmux/plugins/tpm: submodules/tpm
     ~/.vim: etc/vim
     ~/.vimrc: etc/vimrc
-    ~/.vimrc: etc/vimrc
     ~/.zgen: submodules/zgen
     ~/.zsh/.zprezto: submodules/zprezto
     ~/.zsh: etc/zsh
+    # ~/.zsh: etc/zsh_new
     ~/.zshenv: etc/zshenv
     ~/app: app
     ~/bin: bin
+    # sleepwatcher
+    ~/.sleep: etc/sleepwatcher/sleep
+    ~/.wakeup: etc/sleepwatcher/wakeup
 
-- pipx:
-    file: requirements-pipx.txt
-    stdout: false
+- shell:
+  # TODO: remove this and add it as pipx backend in mise, as that actually uses
+  # uv under the hood, even though it's named pipx...
+  - command: cat uv-tools.txt | xargs -I% uv tool install '%'
+    stdout: true
     stderr: true
-
-# TODO: fix venv
-- pip:
-    file: requirements.txt
-    user: true    # Like --user
-    stdout: false # Print the execution stdout
-    stderr: true  # Print the execution stderr
-
-# - shell:
-#   - /usr/bin/python3 -m venv venv
-#   - venv/bin/pip install -r requirements.txt
+    description: Install UV tools
 
 - install-brew: true
 - brewfile:

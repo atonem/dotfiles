@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+echo "hellofrom project"
+
+slugify() {
+  echo "$1" \
+    | iconv -t ascii//TRANSLIT \
+    | tr A-Z a-z \
+    | sed -E 's/[^a-z0-9]+/-/g' \
+    | sed -E 's/^-+\|-+$//g'
+}
+
+set_project() {
+  local project="$1"
+
+  if _is_ticket $project; then
+    export PROJECT_TICKET=$project
+  fi
+
+  if [[ -z "${PROJECT_NAME}" ]]; then
+    export PROJECT_NAME=$project
+  else
+    export PROJECT_NAME="${PROJECT_NAME}.$project"
+  fi
+
+  echo "project name is: $PROJECT_NAME"
+  echo slug is: $(slugify "$project")
+  slugify "$project"
+}
+
+
+_is_ticket() {
+  echo "isticket? $1"
+  if [[ "$1" =~ ^[A-Z]+-[0-9]+$ ]]; then
+    return 0
+  else
+    return 1
+  fi
+}

@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+
+import lib.init  # isort:skip
+
+from tasklib.task import Task  # isort:skip
+import json
+
+task = Task.from_input()
+
+
+print(task.export_data())
+
+print('new task', task.export_data())
+print('old task', json.dumps(task.original.items()))

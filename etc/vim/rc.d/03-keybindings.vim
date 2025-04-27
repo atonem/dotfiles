@@ -8,7 +8,7 @@ nnoremap <C-H> <C-W><C-H>
 
 " Tab commands
 nnoremap tn :tabnew<CR>
-nnoremap tc :tabclose<CR>
+" nnoremap tc :tabclose<CR>
 nnoremap H :tabprev<CR>
 nnoremap L :tabnext<CR>
 

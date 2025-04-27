@@ -1,0 +1,5 @@
+[tools]
+ruff = "latest"
+shellcheck = "latest"
+shfmt = 'latest'
+stylua = "latest"

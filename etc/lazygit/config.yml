@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+gui:
+  mouseEvents: false
+  timeFormat: 2024-08-31
+  shortTimeFormat: 22:00
+  commitHashLength: 7
+
+git:
+  paging:
+    # pager: delta --color-only --paging=never
+    externalDiffCommand: difft --color=always --display=inline --syntax-highlight=off

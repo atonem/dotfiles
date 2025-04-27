@@ -1,7 +1,7 @@
 if !exists('g:lspconfig') | finish | endif
 
 "  SEE AND CONTINUE https://blog.inkdrop.app/how-to-set-up-neovim-0-5-modern-plugins-lsp-treesitter-etc-542c3d9c9887
-
+finish
 
 lua << EOF
 --vim.lsp.set_log_level("debug")

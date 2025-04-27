@@ -1,0 +1,17 @@
+# vim: set filetype=dosini
+
+[general]
+targets = bol_jira
+
+[bol_jira]
+service = jira
+jira.base_uri = https://jira.leovegas.com
+jira.username = anton.emmerik
+jira.PAT = @oracle:use_keyring
+# jira.password = OMG_LULZ
+jira.query = assignee = ralph and status != closed and status != resolved
+# Set this to your jira major version. We currently support only jira version
+# 4 and 5(the default). You can find your particular version in the footer at
+# the dashboard.
+jira.version = 5
+jira.add_tags = work

@@ -32,7 +32,6 @@ zstyle ':prezto:load' pmodule \
   'homebrew' \
   'rsync' \
   'ruby' \
-  'python' \
   'history' \
   'directory' \
   'spectrum' \
@@ -43,6 +42,7 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'autosuggestions' \
   'tmux'
+# 'python' \
 # 'git' \
 
 #
@@ -126,10 +126,10 @@ zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
 #
 
 # Auto switch the Python virtualenv on directory change.
-zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
+# zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
 
 # Automatically initialize virtualenvwrapper if pre-requisites are met.
-zstyle ':prezto:module:python:virtualenv' initialize 'yes'
+# zstyle ':prezto:module:python:virtualenv' initialize 'yes'
 
 #
 # Screen
@@ -159,8 +159,8 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
    'brackets' \
    'pattern' \
    'line' \
-   'cursor' \
    'root'
+   # 'cursor' \ # NOTE: breaks in alacritty
 
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
@@ -208,4 +208,4 @@ zstyle ':prezto:module:tmux:auto-start' local 'no'
 # Enabled safe options. This aliases cp, ln, mv and rm so that they prompt
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
-zstyle ':prezto:module:utility' safe-ops 'yes'
+zstyle ':prezto:module:utility' safe-ops 'no'

@@ -1,0 +1,231 @@
+
+
+
+n  <C-G>       *@defx#do_action('print')
+n  <CR>        *@defx#do_action('open')
+n  <C-R>       *@defx#do_action('redraw')
+n  <Space>     *@defx#do_action('toggle_select') . 'j'
+n  !           *@defx#do_action('execute_command')
+n  *           *@defx#do_action('toggle_select_all')
+n  .           *@defx#do_action('toggle_ignored_files')
+n  ;           *@defx#do_action('repeat')
+n  C           *@defx#do_action('toggle_columns',                'mark:indent:icon:filename:type:size:time')
+n  K           *@defx#do_action('new_directory')
+n  M           *@defx#do_action('new_multiple_files')
+n  N           *@defx#do_action('new_file')
+n  P           *@defx#do_action('preview')
+n  [c           @<Plug>(defx-git-prev)
+n  ]d           @<Plug>(defx-git-discard)
+n  ]r           @<Plug>(defx-git-reset)
+n  ]c           @<Plug>(defx-git-next)
+n  cd          *@defx#do_action('change_vim_cwd')
+n  c           *@defx#do_action('copy')
+n  d           *@defx#do_action('remove')
+n  h           *@defx#do_action('cd', ['..'])
+n  j           *@line('.') == line('$') ? 'gg' : 'j'
+n  k           *@line('.') == 1 ? 'G' : 'k'
+n  l           *@defx#do_action('open')
+n  m           *@defx#do_action('move')
+n  o           *@defx#do_action('open_tree', 'toggle')
+n  p           *@defx#do_action('paste')
+n  q           *@defx#do_action('quit')
+n  r           *@defx#do_action('rename')
+n  s           *@defx#do_action('open', 'split')
+n  t           *@defx#do_action('open', 'tab')
+n  v           *@defx#do_action('open', 'vsplit')
+n  x           *@defx#do_action('execute_system')
+n  yy          *@defx#do_action('yank_path')
+n  ~           *@defx#do_action('cd')
+n  <Plug>(defx-git-discard) *@:<C-U>call <SNR>117_git_cmd('discard')<CR>
+n  <Plug>(defx-git-reset) *@:<C-U>call <SNR>117_git_cmd('reset')<CR>
+n  <Plug>(defx-git-stage) *@:<C-U>call <SNR>117_git_cmd('stage')<CR>
+n  <Plug>(defx-git-prev) *@:<C-U>call <SNR>117_search(-1)<CR>
+n  <Plug>(defx-git-next) *@:<C-U>call <SNR>117_search(1)<CR>
+n  <C-H>       * <C-W><C-H>
+n  <NL>        * <C-W><NL>
+n  <C-K>       * <C-W><C-K>
+n  <C-L>       * <C-W><C-L>
+n  <C-R>         <Plug>(RepeatRedo)
+no <C-_>9        <Plug>TComment_<C-_>9
+no <C-_>8        <Plug>TComment_<C-_>8
+no <C-_>7        <Plug>TComment_<C-_>7
+no <C-_>6        <Plug>TComment_<C-_>6
+no <C-_>5        <Plug>TComment_<C-_>5
+no <C-_>4        <Plug>TComment_<C-_>4
+no <C-_>3        <Plug>TComment_<C-_>3
+no <C-_>2        <Plug>TComment_<C-_>2
+no <C-_>1        <Plug>TComment_<C-_>1
+   <C-_>ca       <Plug>TComment_<C-_>ca
+   <C-_>cc       <Plug>TComment_<C-_>cc
+   <C-_>s        <Plug>TComment_<C-_>s
+   <C-_>n        <Plug>TComment_<C-_>n
+   <C-_>a        <Plug>TComment_<C-_>a
+   <C-_>b        <Plug>TComment_<C-_>b
+   <C-_>i        <Plug>TComment_<C-_>i
+   <C-_>r        <Plug>TComment_<C-_>r
+   <C-_><Space>   <Plug>TComment_<C-_><Space>
+   <C-_>p        <Plug>TComment_<C-_>p
+no <C-_><C-_>    <Plug>TComment_<C-_><C-_>
+n  %             <Plug>(MatchitNormalForward)
+n  -           * :<C-U>Defx -listed -resume -columns=indent:mark:icon:icons:filename:git:size -buffer-name=tab`tabpagenr()` `expand('%:p:h')` -search=`expand('%:p')`<CR>
+n  .             <Plug>(RepeatDot)
+n  H           * :tabprev<CR>
+n  L           * :tabnext<CR>
+n  Q           * @q
+n  U             <Plug>(RepeatUndoLine)
+n  Y           * y$
+n  [%            <Plug>(MatchitNormalMultiBackward)
+n  \ft         * <Cmd>TodoTelescope<CR>
+n  \gf         * <Cmd>Telescope git_status<CR>
+n  \fp         * <Cmd>Telescope registers<CR>
+n  \fh         * <Cmd>Telescope help_tags<CR>
+n  \fb         * <Cmd>Telescope buffers<CR>
+n  \fl         * <Cmd>Telescope live_grep hidden=true<CR>
+n  \ff         * <Cmd>Telescope find_files hidden=true<CR>
+n  \gp         * <Cmd>Gitsigns preview_hunk<CR>
+n  \gS         * <Cmd>Gitsigns undo_stage_hunk<CR>
+n  \gs         * <Cmd>Gitsigns stage_hunk<CR>
+n  \ga         * <Cmd>Gitsigns stage_buffer<CR>
+n  \gc         * <Cmd>Telescope git_bcommits<CR>
+n  \gd         * <Cmd>Gitsigns toggle_deleted<CR>
+n  \gb         * <Cmd>Gitsigns blame_line<CR>
+   \_s           <Plug>TComment_\_s
+   \_n           <Plug>TComment_\_n
+   \_a           <Plug>TComment_\_a
+   \_b           <Plug>TComment_\_b
+   \_r           <Plug>TComment_\_r
+   \_<Space>     <Plug>TComment_\_<Space>
+   \_p           <Plug>TComment_\_p
+nos\__           <Plug>TComment_\__
+n  \le           :call ledger#entry()<CR>
+n  \ld           :call ledger#transaction_date_set(line('.'), 'primary')<CR>
+n  \la           :call ledger#transaction_date_set(line('.'), 'auxiliary')<CR>
+n  \O          * O<Esc>
+n  \o          * o<Esc>
+n  ]a          * :Lspsaga diagnostic_jump_next<CR>
+n  ]%            <Plug>(MatchitNormalMultiForward)
+n  cS            <Plug>CSurround
+n  cs            <Plug>Csurround
+n  ds            <Plug>Dsurround
+n  gp          * :Lspsaga preview_definition<CR>
+n  gh          * :Lspsaga lsp_finder<CR>
+n  gx            <Plug>NetrwBrowseX
+n  g%            <Plug>(MatchitNormalBackward)
+n  g>b           <Plug>TComment_Commentb
+n  g>c           <Plug>TComment_Commentc
+n  g>            <Plug>TComment_Comment
+n  g<b           <Plug>TComment_Uncommentb
+n  g<c           <Plug>TComment_Uncommentc
+n  g<            <Plug>TComment_Uncomment
+n  gcb           <Plug>TComment_gcb
+n  gcc           <Plug>TComment_gcc
+n  gc9c          <Plug>TComment_gc9c
+n  gc9           <Plug>TComment_gc9
+n  gc8c          <Plug>TComment_gc8c
+n  gc8           <Plug>TComment_gc8
+n  gc7c          <Plug>TComment_gc7c
+n  gc7           <Plug>TComment_gc7
+n  gc6c          <Plug>TComment_gc6c
+n  gc6           <Plug>TComment_gc6
+n  gc5c          <Plug>TComment_gc5c
+n  gc5           <Plug>TComment_gc5
+n  gc4c          <Plug>TComment_gc4c
+n  gc4           <Plug>TComment_gc4
+n  gc3c          <Plug>TComment_gc3c
+n  gc3           <Plug>TComment_gc3
+n  gc2c          <Plug>TComment_gc2c
+n  gc2           <Plug>TComment_gc2
+n  gc1c          <Plug>TComment_gc1c
+n  gc1           <Plug>TComment_gc1
+n  gc            <Plug>TComment_gc
+n  q:          * <Cmd>Telescope command_history<CR>
+n  tc          * :tabclose<CR>
+n  tn          * :tabnew<CR>
+n  u             <Plug>(RepeatUndo)
+n  ySS           <Plug>YSsurround
+n  ySs           <Plug>YSsurround
+n  yss           <Plug>Yssurround
+n  yS            <Plug>YSurround
+n  ys            <Plug>Ysurround
+   <Plug>luasnip-expand-repeat * <Cmd>lua require'luasnip'.expand_repeat()<CR>
+   <Plug>luasnip-delete-check * <Cmd>lua require'luasnip'.unlink_current_if_deleted()<CR>
+n  <Plug>(RepeatRedo) * :<C-U>call repeat#wrap("\<C-R>",v:count)<CR>
+n  <Plug>(RepeatUndoLine) * :<C-U>call repeat#wrap('U',v:count)<CR>
+n  <Plug>(RepeatUndo) * :<C-U>call repeat#wrap('u',v:count)<CR>
+n  <Plug>(RepeatDot) * :<C-U>if !repeat#run(v:count)|echoerr repeat#errmsg()|endif<CR>
+n  <Plug>GitsignsRepeat   <Cmd>lua require"gitsigns.repeat".repeat_action()<CR>
+n  <Plug>NetrwBrowseX * :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<CR>
+n  <Plug>(MatchitNormalMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>
+n  <Plug>(MatchitNormalMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>
+n  <Plug>(MatchitNormalBackward) * :<C-U>call matchit#Match_wrapper('',0,'n')<CR>
+n  <Plug>(MatchitNormalForward) * :<C-U>call matchit#Match_wrapper('',1,'n')<CR>
+n  <F25>       * <C-W>:doautocmd <nomodeline> FocusGained %<CR>
+n  <F24>       * :silent doautocmd <nomodeline> FocusLost %<CR>
+n  <M-l>         <Plug>MoveCharRight
+n  <M-h>         <Plug>MoveCharLeft
+n  <M-k>         <Plug>MoveLineUp
+n  <M-j>         <Plug>MoveLineDown
+n  <Plug>MoveCharLeft * :<C-U> silent call <SNR>40_MoveCharHorizontally(-v:count1)<CR>
+n  <Plug>MoveCharRight * :<C-U> silent call <SNR>40_MoveCharHorizontally( v:count1)<CR>
+n  <Plug>MoveLineHalfPageUp * :<C-U> silent call <SNR>40_MoveLineVertically(-v:count1 * <SNR>40_HalfPageSize())<CR>
+n  <Plug>MoveLineHalfPageDown * :<C-U> silent call <SNR>40_MoveLineVertically( v:count1 * <SNR>40_HalfPageSize())<CR>
+n  <Plug>MoveLineUp * :<C-U> silent call <SNR>40_MoveLineVertically(-v:count1)<CR>
+n  <Plug>MoveLineDown * :<C-U> silent call <SNR>40_MoveLineVertically( v:count1)<CR>
+n  <Plug>YSurround * <SNR>39_opfunc2('setup')
+n  <Plug>Ysurround * <SNR>39_opfunc('setup')
+n  <Plug>YSsurround * <SNR>39_opfunc2('setup').'_'
+n  <Plug>Yssurround * '^'.v:count1.<SNR>39_opfunc('setup').'g_'
+n  <Plug>CSurround * :<C-U>call <SNR>39_changesurround(1)<CR>
+n  <Plug>Csurround * :<C-U>call <SNR>39_changesurround()<CR>
+n  <Plug>Dsurround * :<C-U>call <SNR>39_dosurround(<SNR>39_inputtarget())<CR>
+n  <Plug>SurroundRepeat * .
+n  <Plug>TComment_gc9c * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc9c<CR>g@
+n  <Plug>TComment_gc8c * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc8c<CR>g@
+n  <Plug>TComment_gc7c * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc7c<CR>g@
+n  <Plug>TComment_gc6c * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc6c<CR>g@
+n  <Plug>TComment_gc5c * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc5c<CR>g@
+n  <Plug>TComment_gc4c * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc4c<CR>g@
+n  <Plug>TComment_gc3c * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc3c<CR>g@
+n  <Plug>TComment_gc2c * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc2c<CR>g@
+n  <Plug>TComment_gc1c * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc1c<CR>g@
+no <Plug>TComment_<C-_>9 * :call tcomment#SetOption("count", 9)<CR>
+no <Plug>TComment_<C-_>8 * :call tcomment#SetOption("count", 8)<CR>
+no <Plug>TComment_<C-_>7 * :call tcomment#SetOption("count", 7)<CR>
+no <Plug>TComment_<C-_>6 * :call tcomment#SetOption("count", 6)<CR>
+no <Plug>TComment_<C-_>5 * :call tcomment#SetOption("count", 5)<CR>
+no <Plug>TComment_<C-_>4 * :call tcomment#SetOption("count", 4)<CR>
+no <Plug>TComment_<C-_>3 * :call tcomment#SetOption("count", 3)<CR>
+no <Plug>TComment_<C-_>2 * :call tcomment#SetOption("count", 2)<CR>
+no <Plug>TComment_<C-_>1 * :call tcomment#SetOption("count", 1)<CR>
+n  <Plug>TComment_gC * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gC<CR>g@
+n  <Plug>TComment_gc * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gc<CR>g@
+n  <Plug>TComment_gcb * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gcb<CR>g@
+n  <Plug>TComment_gcc * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_gcc<CR>g@$
+   <Plug>TComment_ic * :<C-U>call tcomment#textobject#InlineComment()<CR>
+n  <Plug>TComment_Commentb * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_Commentb<CR>g@
+n  <Plug>TComment_Commentc * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_Commentc<CR>g@$
+n  <Plug>TComment_Commentl * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_Commentl<CR>g@$
+n  <Plug>TComment_Comment * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_Comment<CR>g@
+n  <Plug>TComment_Uncommentb * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_Uncommentb<CR>g@
+n  <Plug>TComment_Uncommentc * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_Uncommentc<CR>g@$
+n  <Plug>TComment_Uncomment * :<C-U>call tcomment#ResetOption() | if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") |set opfunc=TCommentOpFunc_Uncomment<CR>g@
+   <Plug>TComment_\_s * :TCommentAs <C-R>=&ft<CR>_
+   <Plug>TComment_\_n * :TCommentAs <C-R>=&ft<CR><Space>
+   <Plug>TComment_\_a * :TCommentAs<Space>
+   <Plug>TComment_\_b * :TCommentBlock<CR>
+   <Plug>TComment_\_r * :TCommentRight<CR>
+   <Plug>TComment_\_<Space> * :TComment<Space>
+   <Plug>TComment_\_p * vip:TComment<CR>
+nos<Plug>TComment_\__ * :TComment<CR>
+   <Plug>TComment_<C-_>ca * :<C-U>call tcomment#SetOption("as", input("Comment as: ", &filetype, "customlist,tcomment#complete#Complete"))<CR>
+   <Plug>TComment_<C-_>cc * :<C-U>call tcomment#SetOption("count", v:count1)<CR>
+   <Plug>TComment_<C-_>s * :TCommentAs <C-R>=&ft<CR>_
+   <Plug>TComment_<C-_>n * :TCommentAs <C-R>=&ft<CR><Space>
+   <Plug>TComment_<C-_>a * :TCommentAs<Space>
+   <Plug>TComment_<C-_>b * :TCommentBlock<CR>
+   <Plug>TComment_<C-_>i * v:TCommentInline mode=I#<CR>
+   <Plug>TComment_<C-_>r * :TCommentRight<CR>
+   <Plug>TComment_<C-_><Space> * :TComment<Space>
+   <Plug>TComment_<C-_>p * m`vip:TComment<CR>``
+no <Plug>TComment_<C-_><C-_> * :TComment<CR>
+n  <Plug>PlenaryTestFile * :lua require('plenary.test_harness').test_directory(vim.fn.expand("%:p"))<CR>

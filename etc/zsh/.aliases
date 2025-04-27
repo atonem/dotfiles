@@ -9,25 +9,8 @@ alias ibrew=/usr/local/bin/brew
 alias python=python3
 alias pip=pip3
 
-# pip3 alias
-# alias pip3='python3 -m pip'
-# venv alias
-_venv() {
-  python --version
-  python -m venv $1
-  $1/bin/pip install black neovim pyls isort mypy pylint
-
-}
-alias venv=_venv
-_activate() {
-  python --version
-  source $1/bin/activate
-
-}
-alias activate=_activate
-
 # Fix broken ls with correct values
-alias ls='\ls -alhGP'
+# alias ls='\ls -alhGP'
 
 # Use exhuberant-ctags from homebrew
 # alias ctags="$(brew --prefix)/bin/ctags"
@@ -41,6 +24,9 @@ alias wtf='wtfutil'
 # kubernetes
 alias k='kubectl'
 
+# joshuto
+alias jo="joshuto"
+
 # add default ignore command to tree
 alias tree="tree -a -I 'node_modules|.git|.DS_Store' --dirsfirst"
 
@@ -52,41 +38,62 @@ alias tree="tree -a -I 'node_modules|.git|.DS_Store' --dirsfirst"
 # }
 # bindkey '^J' _jump
 
+# load env vars from file for command
+# FIXME: doesn't work for some reason...
+source_env_file() {
+  env_file="$PWD/${1}"
+  echo $env_file
+  env $(cat "$env_file" | grep -v "#" | xargs) "$@"
+}
+alias ev=source_env_file
+
 #
 # taskwarrior
 #
+alias taskui=taskwarrior-tui
+
+#
+# mise
+#
+alias mr="mise run"
+
+# run taskwarrior with TASK_CONTEXT env var support
+alias task='command task ${TASK_CONTEXT:+rc.context:${TASK_CONTEXT}}'
 
 # in for inbox items
 alias in='task add +in'
 
-# tick things that should appear in inbox after time
-tickle () {
-    deadline=$1
-    shift
-    in +tickle wait:$deadline $@
-}
-alias tick=tickle
-
-# things to think about before dealing with next day - ONLY DO THIS ONCE, no snooze - yes/no question
-alias think='tickle +1d'
-
-# research
-alias rnd='task add +rnd +next +@computer +@online'
-
-webpage_title () {
-    wget -qO- "$*" | hxselect -s '\n' -c  'title' 2>/dev/null
-}
-
-read_and_review () {
-    link="$1"
-    title=$(webpage_title $link)
-    echo $title
-    descr="\"Read and review: $title\""
-    id=$(task add +next +rnr "$descr" | sed -n 's/Created task \(.*\)./\1/p')
-    task "$id" annotate "$link"
-}
-
-alias rnr=read_and_review
+# force tw sync
+alias tasks="$HOME/.task/task-sync.sh"
+#
+# # tick things that should appear in inbox after time
+# tickle () {
+#     deadline=$1
+#     shift
+#     in +tickle wait:$deadline $@
+# }
+# alias tick=tickle
+#
+# # things to think about before dealing with next day - ONLY DO THIS ONCE, no snooze - yes/no question
+# alias think='tickle +1d'
+#
+# # research
+# alias rnd='task add +rnd +next +@computer +@online'
+#
+# webpage_title () {
+#     wget -qO- "$*" | hxselect -s '\n' -c  'title' 2>/dev/null
+# }
+#
+# read_and_review () {
+#     link="$1"
+#     title=$(webpage_title $link)
+#     echo $title
+#     descr="\"Read and review: $title\""
+#     id=$(task add +next +rnr "$descr" | sed -n 's/Created task \(.*\)./\1/p')
+#     task "$id" annotate "$link"
+# }
+#
+# alias rnr=read_and_review
 
 alias grc='grc --config=generic.conf tail' # -n 100 -f
 
@@ -104,7 +111,7 @@ timew_summary() {
 alias ts=timew_summary
 
 timew_next() {
-  tw stop
+  timew || tw stop
   tw continue
   tw annotate @1 $1
 }
@@ -112,28 +119,69 @@ timew_next() {
 alias tn=timew_next
 
 timew_defined() {
+  # stop ev. current tracking
+  timew || tw stop
+
   case "$1" in
     "admin")
-      timew start bol admin && tw annotate "Catchup, admin, PR:s."
+      timew start admin && tw annotate "Catchup, admin, PR:s."
       ;;
 
-    "standup")
-      timew start bol meeting && tw annotate "Standup."
+    "comp")
+      timew start comp && tw annotate "On-call compensation."
+      ;;
+
+    "core")
+      timew start meeting && tw annotate "Web Core Weekly."
+      ;;
+
+
+    "groupapi")
+      timew start meeting && tw annotate "Group API Sync."
+      ;;
+
+    "web")
+      timew start meeting && tw annotate "Web Standup."
+      ;;
+
+    "daily")
+      timew start meeting && tw annotate "Daily (BoL) Sync."
       ;;
 
     "sync")
-      timew start bol meeting && tw annotate "Weekly team sync meeting."
+      timew start  meeting && tw annotate "Team sync meeting."
+      ;;
+
+    "devsync")
+      timew start meeting && tw annotate "Dev team sync meeting."
       ;;
 
     "monday")
       timew start meeting && tw annotate "Company Monday meeting."
       ;;
 
+    "peakon")
+      timew start peakon && tw annotate "Peakon survey."
+      ;;
+
+    "handover")
+      timew start meeting && tw annotate "On-call handover."
+      ;;
+
+    "br")
+      timew start meeting && tw annotate "Brazil Sync."
+      ;;
+
     "")
       echo "admin"
+      echo "comp"
       echo "standup"
       echo "sync"
+      echo "devsync"
       echo "monday"
+      echo "peakon"
+      echo "handover"
+      echo "br"
       ;;
   esac
 }
@@ -149,6 +197,7 @@ timew_report() {
 }
 
 alias report=timew_report
+
 
 # tmuxp configuration and aliases
 export TMUXP_CONFIGDIR=$HOME/.config/tmuxp
@@ -199,3 +248,25 @@ compdef _t t
 alias ta='tmux ls'
 
 # alias du='du -sch * .*'
+
+# jira
+alias jwatch='jira issue list -w'
+alias jme='jira issue list -a$(jira me) -s~Closed'
+
+# git
+alias git-branch-issue="git symbolic-ref HEAD | grep --color=never -Eo '\w{2,5}-[0-9]+' | tr  '[:lower:]'  '[:upper:]'"
+alias lg="lazygit"
+
+# taskrwarrior
+alias task-context-project="task context show | grep write | grep -Eo 'project:\w+' | sed 's/^project://'"
+
+# bol utils
+alias b="just -f ~/src/bol-cli/justfile"
+
+# mkdir
+_mkcdir() {
+  mkdir -p $1
+  cd "$_"
+}
+
+alias mkcdir=_mkcdir

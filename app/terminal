@@ -2,4 +2,4 @@
 
 set -euxo pipefail
 
-exec kitty "$@"
+exec alacritty "$@"

@@ -7,19 +7,14 @@ format = """\
   $shlvl\
   $kubernetes\
   $directory\
-  $hg_branch\
   $docker_context\
   $git_branch\
   $git_commit\
   $git_state\
   $git_status\
   $package\
-  $cmake\
+  $direnv\
   $dart\
-  $dotnet\
-  $elixir\
-  $elm\
-  $erlang\
   $golang\
   $helm\
   $java\
@@ -60,8 +55,8 @@ format = """\
 
 [character]
 # symbol = "➜"
-error_symbol = "[✖](bold red)"
-success_symbol = "[➜](bold green)"
+# error_symbol = "[✖](bold red)"
+# success_symbol = "[➜](bold green)"
 # use_symbol_for_status = true
 
 #
@@ -105,4 +100,10 @@ disabled = true
 
 [status]
 format = '[\[$status\]]($style) '
+disabled = false
+
+[git_commit]
+only_detached = false
+
+[direnv]
 disabled = false

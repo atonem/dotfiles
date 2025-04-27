@@ -1,0 +1,83 @@
+# [Created by task 2.5.3 1/25/2021 10:05:54]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable = foo   -- By specifying a value, this overrides the default
+#   variable =       -- By specifying no value, this means no default
+#   #variable = foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+# Some config examples
+# https://r-pufky.github.io/docs/apps/taskwarrior.html
+
+# Files
+# data.location = ~/.task
+# to sync with taskchampion app
+data.location=~/Library/Mobile Documents/iCloud~com~mav~taskchamp/Documents/task
+
+# Searching
+regex=on
+search.case.sensitive = no
+
+# Theme
+# NOTE: this is a bit iffy and needs to be chaged with version changes
+include $HOMEBREW_PREFIX/opt/task@2/share/doc/task/rc/dark-violets-256.theme
+
+# Calendar
+weekstart = Monday
+# include /opt/homebrew/Cellar/task/2.6.1/share/doc/task/rc/holidays.en-US.rc
+
+# default
+report.next.columns = id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
+report.next.labels = ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Urg
+
+# Inbox configuration
+report.in.columns = id,description
+report.in.description = Inbox
+report.in.filter = status:pending limit:page (+in)
+report.in.labels = ID,Description
+
+# Only set urgency based on priority and due date.
+urgency.age.coefficient = 0.0
+urgency.age.max = 0.0
+urgency.annotations.coefficient = 0.0
+urgency.blocked.coefficient = 0.0
+urgency.blocking.coefficient = 0.0
+urgency.inherit = on
+urgency.project.coefficient = 0.0
+urgency.scheduled.coefficient = 0.0
+urgency.tags.coefficient = 0.0
+# use default for next
+# urgency.user.tag.next.coefficient = 0.0
+urgency.waiting.coefficient = 0.0
+
+urgency.due.coefficient = 12.0
+urgency.active.coefficient = 6.0
+
+# Contexts
+news.version = 2.6.2
+context.work.read = project:work or +urgent
+context.work.write = project:work
+
+# TODO: set this with some shell env var?
+# default.project=$PROJECT
+
+# UDA's
+
+## priority
+# uses default from https://taskwarrior.org/docs/priority/ to start with
+# commented are default colors is set in theme (violets)
+color.uda.priority.H = color204
+color.uda.priority.M = gray15
+color.uda.priority.L = gray9
+
+uda.priority.label = Priority
+uda.priority.type = string
+uda.priority.values = H,M,,L,
+
+urgency.uda.priority.H.coefficient = 6.0
+urgency.uda.priority.L.coefficient = -1.0
+urgency.uda.priority.M.coefficient = 3.9
+news.version=2.6.0

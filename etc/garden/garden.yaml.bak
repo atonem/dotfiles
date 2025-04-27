@@ -1,0 +1,11 @@
+---
+garden:
+  includes:
+    - ${workspace-root}
+variables:
+  workspace-root: ~/workspaces
+commands:
+  test: 'echo "args: \"$1\""'
+trees:
+  /Users/anton/dotfiles:
+    url: "git@github.com:atonem/dotfiles.git"

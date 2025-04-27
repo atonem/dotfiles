@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 
-import json, sys, argparse
+import argparse
+import json
+import sys
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--pretty', action='store_true')
+parser.add_argument("--pretty", action="store_true")
 
 args = parser.parse_args()
 
-input  = sys.stdin.read()
+input = sys.stdin.read()
 parsed = json.loads(input)
 output = json.dumps(parsed, indent=2 if args.pretty else None)
 print(output)

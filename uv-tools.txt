@@ -1,0 +1,8 @@
+ruff
+bugwarrior[jira,keychain]
+cookiecutter
+tmuxp
+yt-dlp[default]
+csvkit
+check-jsonschema
+copier --with copier-templates-extensions

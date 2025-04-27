@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+
+import sys
+import json
+import pprint
+
+task_before = json.loads(sys.stdin.readline())
+task = json.loads(sys.stdin.readline())
+msg = ''
+
+if 'start' in task_before and 'start' not in task:
+    # task was stopped
+    msg = 'stopped task'
+
+elif 'start' not in task_before and 'start' in task:
+    # task was started
+    msg = 'started task'
+
+
+print(json.dumps(task))
+# print(msg)
+pprint.pprint({ 'task_before': task_before, 'task': task })
+sys.exit(0)

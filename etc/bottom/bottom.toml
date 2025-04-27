@@ -1,0 +1,4 @@
+[flags]
+battery = true
+disable_click = true
+color = 'nord'

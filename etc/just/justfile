@@ -1,0 +1,10 @@
+set export
+set positional-arguments
+
+# datadog utilities
+mod dd
+# gh cli utilieis
+mod gh
+# jira cli utilieis
+mod jira
+

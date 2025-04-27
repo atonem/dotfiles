@@ -1,0 +1,1 @@
+/Users/anton/private/project/contrib/direnv/project.sh

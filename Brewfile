@@ -5,7 +5,8 @@ tap "homebrew/cask-versions"
 tap "eddieantonio/eddieantonio"
 tap "universal-ctags/universal-ctags"
 tap "PotatoLabs/homebrew-git-redate"
-tap out-of-cheese-error/the-way
+tap "out-of-cheese-error/the-way"
+# tap "charmbracelet/tap"
 
 brew "coreutils"
 brew "automake"
@@ -20,41 +21,36 @@ brew "libtool"
 brew "gpg"
 brew "rbenv"
 brew "ruby-build"
-brew "jenv"
-brew "fzf"
 brew "prototool"
-brew "n"
 brew "wget"
 brew "html-xml-utils"
+brew "blueutil"
+brew "sleepwatcher"
 
 # CLI utilities
 brew "tidy-html5"
 brew "lnav"
 brew "scc"
-brew "just"
-brew "the-way"
+brew "nomino"
 
-# Ranger utiities
-brew "ranger"
-brew "trash"
-brew "libcaca"
-brew "highlight"
-brew "atool"
-brew "mediainfo"
-brew "exiftool"
+# file browser
+# brew "joshuto"
+# used by ranger, still needed?
+# brew "trash"
+# brew "libcaca"
+# brew "highlight"
+# brew "atool"
+# brew "mediainfo"
+# brew "exiftool"
 
 brew "mas"
-brew "tmux"
 brew "imagemagick"
-brew "ripgrep"
 brew "stow"
 brew "zsh-completions"
 brew "tree"
-brew "htop"
 brew "watch"
 brew "vnstat"
 brew "p7zip"
-brew "irssi"
 brew "git-redate"
 
 cask "librewolf"
@@ -68,27 +64,21 @@ brew "gnuplot"
 brew "tig"
 brew "task"
 brew "tasksh"
+brew "taskopen"
 brew "timewarrior"
-
-# vcs
-tap "jesseduffield/lazygit"
-brew "lazygit"
 
 # Editors
 brew "vim", args: ["with-python3"]
-brew "neovim", args: ['HEAD']
 brew "editorconfig"
 cask "font-hack-nerd-font"
 cask "sublime-text"
-cask "kitty"
 
 # Development
-brew "python3"
-brew "pipx"
-brew "awscli"
 brew "kubernetes-cli"
 brew "postgresql"
+# brew "luarocks"
 cask "docker"
+
 
 # Security
 cask "lulu"

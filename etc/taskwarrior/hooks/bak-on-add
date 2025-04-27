@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+import sys
+import json
+
+import lib.timew
+
+
+task = json.loads(sys.stdin.readline())
+msg = ''
+
+if 'project' not in task:
+    timew_ticket = lib.timew.current_ticket()
+    if timew_ticket:
+        task['project'] = timew_ticket
+        msg = f"Added task to {timew_ticket}."
+
+# print(myCmd)
+print(json.dumps(task))
+print(msg)
+sys.exit(0)

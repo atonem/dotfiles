@@ -1,0 +1,9 @@
+---
+session_name: "default"
+number_of_panes: 4
+commands:
+  - vim package.json
+  - git status
+  - git status
+  - ranger
+

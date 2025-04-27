@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+# set -e
+
+dir="$1"
+session="$2"
+attach=1
+if [[ $* == *-d* ]]; then
+  attach=0
+fi
+# template="$2"
+
+echo "session: $session"
+echo "attach: $attach"
+echo "dir: $dir"
+
+tmux has-session -t $session >/dev/null 2>&1
+if [ $? == 0 ]; then
+  # session already exists, abort
+  exit 1
+fi
+
+cd $dir
+tmux new-session -d -s $session
+
+# vim
+tmux rename-window -t $session:1 vim
+tmux send-keys -t $session:1 'vim package.json' Enter
+
+# dev
+tmux new-window -t $session:2 -n dev
+tmux send-keys -t $session:2 'npm run dev'
+
+# zsh
+tmux new-window -t $session:3 -n zsh
+tmux send-keys -t $session:3 'git status' Enter
+
+# ranger
+tmux new-window -t $session:4 -n ranger
+tmux send-keys -t $session:4 'ranger' Enter
+
+tmux select-window -t $session:1
+
+if ((${attach} == 1)); then
+  if [ -n "${TMUX}" ]; then
+    # if already in tmux switch
+    tmux switch -t $session
+  else
+    # else attach
+    tmux attach -t $session
+  fi
+fi

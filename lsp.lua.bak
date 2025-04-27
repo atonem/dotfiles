@@ -1,0 +1,145 @@
+return {
+  {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    dependencies = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
+
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'L3MON4D3/LuaSnip'},
+    }
+  }
+  {
+    "williamboman/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = {
+        "luacheck",
+        "jsonls",
+        "lua_ls",
+        "tsserver",
+        "diagnosticls",
+        "eslint",
+        "graphql",
+        "html",
+        "rust_analyzer",
+        "yamlls",
+      }
+    }
+  },
+
+  {
+    'glepnir/lspsaga.nvim',
+    keys = {
+      { "gh", "<cmd>Lspsaga lsp_finder<cr>", desc = "Show LSP usage" },
+      { "gp", "<cmd>Lspsaga preview_definition<cr>", desc = "Preview LSP definition" },
+
+    },
+  },
+
+  -- lsp servers
+  {
+    "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+    },
+    opts = {
+      diagnostics = {
+        update_in_insert = false,
+      },
+      capabilities = {},
+      autoformat = false,
+      servers = {
+        luacheck = {},
+        jsonls = {},
+        lua_ls = {},
+        tsserver = {},
+        diagnosticls = {},
+        eslint = {},
+        graphql = {},
+        html = {},
+        rust_analyzer = {},
+        yamlls = {},
+      },
+      setup = {
+        tsserver = {
+          root_dir = function(...)
+            return require("lspconfig.util").root_pattern(".git")(...)
+          end,
+          settings = {
+            filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+          },
+        },
+        diagnostics = {
+          filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
+          init_options = {
+            linters = {
+              eslint = {
+                command = 'eslint_d',
+                rootPatterns = { '.git' },
+                debounce = 100,
+                args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
+                sourceName = 'eslint_d',
+                parseJson = {
+                  errorsRoot = '[0].messages',
+                  line = 'line',
+                  column = 'column',
+                  endLine = 'endLine',
+                  endColumn = 'endColumn',
+                  message = '[eslint] ${message} [${ruleId}]',
+                  security = 'severity'
+                },
+                securities = {
+                  [2] = 'error',
+                  [1] = 'warning'
+                }
+              },
+            },
+            filetypes = {
+              javascript = 'eslint',
+              javascriptreact = 'eslint',
+              typescript = 'eslint',
+              typescriptreact = 'eslint',
+            },
+            formatters = {
+              -- eslint_d = {
+              --   command = 'eslint_d',
+              --   rootPatterns = { '.git' },
+              --   args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
+              --   rootPatterns = { '.git' },
+              -- },
+              prettier = {
+                command = 'prettier_d_slim',
+                rootPatterns = { '.git' },
+                -- requiredFiles: { 'prettier.config.js' },
+                args = { '--stdin', '--stdin-filepath', '%filename' }
+              }
+            },
+            formatFiletypes = {
+              css = 'prettier',
+              javascript = 'prettier',
+              javascriptreact = 'prettier',
+              json = 'prettier',
+              scss = 'prettier',
+              less = 'prettier',
+              typescript = 'prettier',
+              typescriptreact = 'prettier',
+              markdown = 'prettier',
+            }
+          }
+        },
+      },
+    },
+  },
+  -- formatters
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "mason.nvim" },
+  },
+}

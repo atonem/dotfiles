@@ -1,0 +1,26 @@
+Brew uninstall:
+
+(remove and) replace in mise:
+fd
+direnv
+dust
+fzf
+cargo:fastmod
+delta (git-delta)
+glow
+jq
+k9s
+kubectl
+go:github.com/ankitpokhrel/jira-cli (homebrew jira)
+lazygit
+mkcert
+cargo:pueue
+ripgrep
+cargo:sd
+shfmt
+sops
+starship
+tmux
+zoxide
+gcloud (remove cask google-cloud-sdk)
+

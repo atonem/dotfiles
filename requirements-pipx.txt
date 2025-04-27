@@ -1,4 +1,0 @@
-isort
-black
-python-lsp-server
-bugwarrior

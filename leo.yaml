@@ -1,0 +1,14 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+    brewfile:
+      stdin: true
+      stderr: true
+      stdout: true
+
+- create:
+  - ~/.config
+
+- link:
+    ~/.config/.jira: etc/jira

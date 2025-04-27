@@ -1,0 +1,27 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "5186af7984aa"
+hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
+
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "c76bf4fb6120"
+hash = "a6b78bf9af5390e3a85a6951fbb7b93"
+
+[[plugin.deps]]
+use = "Reledia/miller"
+rev = "40e02654725a"
+hash = "2d6d77583162aaf0a599e7a3091b5878"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "5186af7984aa"
+hash = "2391805528b59d562a51f9b33f4a8236"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "5186af7984aa"
+hash = "771f18427fb75fb19990ce602bb322f4"
+
+[flavor]
+deps = []

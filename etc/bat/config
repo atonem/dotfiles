@@ -1,0 +1,5 @@
+--color always 
+--italic-text always
+--theme base16-256
+--plain
+--pager "less -RX"

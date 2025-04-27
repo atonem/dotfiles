@@ -1,0 +1,5 @@
+-- preview = function()
+--   local buffer = vim.api.nvim_buf_get_name(0)
+--   vim.print(buffer)
+--
+-- end
