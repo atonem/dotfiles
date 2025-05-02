@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+$(brew --prefix)/bin/blueutil --power 0
+networksetup -setairportpower Wi-Fi off

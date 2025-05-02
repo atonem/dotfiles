@@ -1,0 +1,109 @@
+add_newline = false
+
+# see https://starship.rs/config/#prompt
+format = """\
+  $username\
+  $hostname\
+  $shlvl\
+  $kubernetes\
+  $directory\
+  $docker_context\
+  $git_branch\
+  $git_commit\
+  $git_state\
+  $git_status\
+  $package\
+  $direnv\
+  $dart\
+  $golang\
+  $helm\
+  $java\
+  $julia\
+  $kotlin\
+  $nim\
+  $ocaml\
+  $perl\
+  $php\
+  $purescript\
+  $python\
+  $ruby\
+  $nodejs\
+  $rust\
+  $swift\
+  $terraform\
+  $zig\
+  $nix_shell\
+  $conda\
+  $memory_usage\
+  $aws\
+  $gcloud\
+  $openstack\
+  $env_var\
+  $crystal\
+  $custom\
+  $cmd_duration\
+  $line_break\
+  $lua\
+  $battery\
+  $time\
+  $status\
+  $character\
+"""
+# ${custom.timewarrior}\
+# ${custom.taskwarrior}\
+
+
+[character]
+# symbol = "➜"
+# error_symbol = "[✖](bold red)"
+# success_symbol = "[➜](bold green)"
+# use_symbol_for_status = true
+
+#
+# Battey
+#
+[battery]
+format = "[$symbol $percentage]($style) "
+
+  [[battery.display]]
+  style = "bold red"
+  threshold = 10
+
+  [[battery.display]]
+  style = "yellow green"
+  threshold = 40
+
+  # arbitrary hide at 97%, all scientists agree
+  [[battery.display]]
+  style = "bold green"
+  threshold = 95
+
+[directory]
+style = "bold green"
+
+[gcloud]
+disabled = true
+
+[username]
+disabled = false
+format = "[$user]($style) "
+show_always = true
+style_root = "black red"
+style_user = "bold dimmed green"
+
+# make sure to only set config via env with kubernetes
+[kubernetes]
+disabled = true
+
+[ruby]
+disabled = true
+
+[status]
+disabled = false
+format = '[\[$status\]]($style) '
+
+[git_commit]
+only_detached = false
+
+[direnv]
+disabled = false

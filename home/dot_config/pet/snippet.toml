@@ -1,0 +1,139 @@
+[[Snippets]]
+command = "gcloud projects list | grep -vE sys-"
+description = "List gcloud projects"
+output = ""
+tag = ["gcloud"]
+
+[[Snippets]]
+command = "gcloud config set project <project>"
+description = "Set gcloud project"
+output = ""
+tag = ["gcloud"]
+
+[[Snippets]]
+command = "gcloud container clusters list"
+description = "List gcloud clusters for current project"
+output = ""
+tag = ["gcloud"]
+
+[[Snippets]]
+command = "gcloud container clusters get-credentials <cluster> --region=<region>"
+description = "Get k8s credentials for GKE cluster from gcloud"
+output = ""
+tag = ["gcloud"]
+
+[[Snippets]]
+command = "kubectl config get-contexts"
+description = "Get k8s contexts from config"
+output = ""
+tag = ["k8s"]
+
+[[Snippets]]
+command = "kubectl config use-context <context>"
+description = "Set k8s context to one of available contexts"
+output = ""
+tag = ["k8s"]
+
+[[Snippets]]
+command = "gcloud container images list-tags --format=json  eu.gcr.io/leo-platform-infra/artifacts/bol-workspace-<brand>-app --filter=\"tags ~ <tag>\""
+description = "Filter gcloud container images by brand/tag"
+output = ""
+tag = ["gcloud"]
+
+[[Snippets]]
+command = "npm view <package> versions --json | jq '.[] | select(contains(\"<snapshot>\"))'"
+description = "Search npm for specific version of package"
+output = ""
+tag = ["npm"]
+
+[[Snippets]]
+command = "rl -l '<term>' | xargs sd '<term>' '<replace>'"
+description = "Find and replace with rg and sd"
+output = ""
+tag = ["rg", "sed"]
+
+[[Snippets]]
+command = "git diff --patch --output=<output>.patch -- <files=\"\">"
+description = "Generate git patch from unstaged changes"
+output = ""
+tag = ["git"]
+
+[[Snippets]]
+command = "patch <<name>.patch"
+description = "Apply patch raw"
+output = ""
+tag = ["git"]
+
+[[Snippets]]
+command = "git rev-parse --abbrev-ref HEAD"
+description = "Get current git branch name"
+output = ""
+tag = ["git"]
+
+[[Snippets]]
+description = "Remove ripgrepped lines"
+# this wiLL have issues if there's multiple lines being removed from one file, as the row number changes...
+command = "rg --no-heading -n  <term> <dirs=.> | tr ':' ' ' | cut -d ' ' -f 1-2 | xargs -L1 sh -c 'sed -i \"\" $1d $0'"
+output = ""
+tag = ["rg", "sed", "FIXME"]
+
+[[Snippets]]
+command = "rg -l <term> <dirs=.> | xargs nvim -p"
+description = "Find files and open all in nvim tabs"
+output = ""
+tag = ["nvim", "rg"]
+
+[[Snippets]]
+command = "<cmd> | paste -sd+ - | bc"
+description = "Calculate sum from newline delimited command"
+output = ""
+tag = [""]
+
+[[Snippets]]
+command = "find <dir> -type d -exec du -hs {} \\;"
+description = "Show folder sizes"
+output = ""
+tag = ["find", "du"]
+
+[[Snippets]]
+command = "find <dirs=.> -type f -name '*<suffix>' -o -name '*~' | xargs -L1  sh -c 'mv $0 ${0%<suffix>}'"
+description = "Remove suffix from found files"
+output = ""
+tag = ["find", "rename"]
+
+[[Snippets]]
+command = "ls -1F <dir=.> | grep '/$' | xargs -I %  echo \"$(pwd)/%\" | xargs -I % bash -c 'tmux new-window -c \"%\" -n \"$(basename %)\"'"
+description = "Open folders in dir in new tmux windows"
+output = ""
+tag = ["tmux"]
+
+[[Snippets]]
+description = "Extract paths from files"
+# would need to escape slashes correctly when grepping
+command = "rg --no-heading '<match>' src | grep -oe '\\<match>\\/.*\\.\\w*'"
+output = ""
+tag = ["rg", "grep", "FIXME"]
+
+[[Snippets]]
+command = "rg -l <term> <dir=.> | xargs sed -i.bak 's,<term>,<replace>,g'"
+description = "Find replace in project with rg, xargs, and sed"
+output = ""
+tag = ["rg", "sed"]
+
+[[Snippets]]
+command = "rg --files <dir=.> | rg .<suffix=bak>$ | xargs rm -f"
+description = "Remove files with suffix"
+output = ""
+tag = ["rg", "delete"]
+
+[[Snippets]]
+command = "git -c color.status=never status --short | cut -c4- | xargs rg '<term=console\\.log>'"
+description = "Find lines in all files changed/untracked by git."
+output = ""
+tag = ["git", "rg"]
+
+[[Snippets]]
+command = "openssl s_client -connect <hostname=>:<port=443> -showcerts"
+description = "Get host SSL cert"
+output = ""
+tag = ["ssl"]
