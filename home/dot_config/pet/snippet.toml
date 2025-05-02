@@ -1,0 +1,144 @@
+
+[[Snippets]]
+  Description = "List gcloud projects"
+  Output = ""
+  Tag = ["gcloud"]
+  command = "gcloud projects list | grep -vE sys-"
+
+[[Snippets]]
+  Description = "Set gcloud project"
+  Output = ""
+  Tag = ["gcloud"]
+  command = "gcloud config set project <project>"
+
+[[Snippets]]
+  Description = "List gcloud clusters for current project"
+  Output = ""
+  Tag = ["gcloud"]
+  command = "gcloud container clusters list"
+
+[[Snippets]]
+  Description = "Get k8s credentials for GKE cluster from gcloud"
+  Output = ""
+  Tag = ["gcloud"]
+  command = "gcloud container clusters get-credentials <cluster> --region=<region>"
+
+[[Snippets]]
+  Description = "Get k8s contexts from config"
+  Output = ""
+  Tag = ["k8s"]
+  command = "kubectl config get-contexts"
+
+[[Snippets]]
+  Description = "Set k8s context to one of available contexts"
+  Output = ""
+  Tag = ["k8s"]
+  command = "kubectl config use-context <context>"
+
+[[Snippets]]
+  Description = "Filter gcloud container images by brand/tag"
+  Output = ""
+  Tag = ["gcloud"]
+  command = "gcloud container images list-tags --format=json  eu.gcr.io/leo-platform-infra/artifacts/bol-workspace-<brand>-app --filter=\"tags ~ <tag>\""
+
+[[Snippets]]
+  Description = "Search npm for specific version of package"
+  Output = ""
+  Tag = ["npm"]
+  command = "npm view <package> versions --json | jq '.[] | select(contains(\"<snapshot>\"))'"
+
+[[Snippets]]
+  Description = "Find and replace with rg and sd"
+  Output = ""
+  Tag = ["rg", "sed"]
+  command = "rl -l '<term>' | xargs sd '<term>' '<replace>'"
+
+[[Snippets]]
+  Description = "Generate git patch from unstaged changes"
+  Output = ""
+  Tag = ["git"]
+  command = "git diff --patch --output=<output>.patch -- <files=\"\">"
+
+[[Snippets]]
+  Description = "Apply patch raw"
+  Output = ""
+  Tag = ["git"]
+  command = "patch <<name>.patch"
+
+[[Snippets]]
+  Description = "Get current git branch name"
+  Output = ""
+  Tag = ["git"]
+  command = "git rev-parse --abbrev-ref HEAD"
+
+[[Snippets]]
+  Description = "Remove ripgrepped lines"
+  Output = ""
+  Tag = ["rg", "sed", "FIXME"]
+  command = "rg --no-heading -n  <term> <dirs=.> | tr ':' ' ' | cut -d ' ' -f 1-2 | xargs -L1 sh -c 'sed -i \"\" $1d $0'"
+
+[[Snippets]]
+  Description = "Find files and open all in nvim tabs"
+  Output = ""
+  Tag = ["nvim", "rg"]
+  command = "rg -l <term> <dirs=.> | xargs nvim -p"
+
+[[Snippets]]
+  Description = "Calculate sum from newline delimited command"
+  Output = ""
+  Tag = [""]
+  command = "<cmd> | paste -sd+ - | bc"
+
+[[Snippets]]
+  Description = "Show folder sizes"
+  Output = ""
+  Tag = ["find", "du"]
+  command = "find <dir> -type d -exec du -hs {} \\;"
+
+[[Snippets]]
+  Description = "Remove suffix from found files"
+  Output = ""
+  Tag = ["find", "rename"]
+  command = "find <dirs=.> -type f -name '*<suffix>' -o -name '*~' | xargs -L1  sh -c 'mv $0 ${0%<suffix>}'"
+
+[[Snippets]]
+  Description = "Open folders in dir in new tmux windows"
+  Output = ""
+  Tag = ["tmux"]
+  command = "ls -1F <dir=.> | grep '/$' | xargs -I %  echo \"$(pwd)/%\" | xargs -I % bash -c 'tmux new-window -c \"%\" -n \"$(basename %)\"'"
+
+[[Snippets]]
+  Description = "Extract paths from files"
+  Output = ""
+  Tag = ["rg", "grep", "FIXME"]
+  command = "rg --no-heading '<match>' src | grep -oe '\\<match>\\/.*\\.\\w*'"
+
+[[Snippets]]
+  Description = "Find replace in project with rg, xargs, and sed"
+  Output = ""
+  Tag = ["rg", "sed"]
+  command = "rg -l <term> <dir=.> | xargs sed -i.bak 's,<term>,<replace>,g'"
+
+[[Snippets]]
+  Description = "Remove files with suffix"
+  Output = ""
+  Tag = ["rg", "delete"]
+  command = "rg --files <dir=.> | rg .<suffix=bak>$ | xargs rm -f"
+
+[[Snippets]]
+  Description = "Find lines in all files changed/untracked by git."
+  Output = ""
+  Tag = ["git", "rg"]
+  command = "git -c color.status=never status --short | cut -c4- | xargs rg '<term=console\\.log>'"
+
+[[Snippets]]
+  Description = "Get host SSL cert"
+  Output = ""
+  Tag = ["ssl"]
+  command = "openssl s_client -connect <hostname=>:<port=443> -showcerts"
+
+[[Snippets]]
+  Description = "Get gzipped size of a file."
+  Output = ""
+  Tag = []
+  command = "gzip -v -c <filename> | wc -l | awk '{print $1/1024\"K\"}"

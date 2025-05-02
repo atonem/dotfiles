@@ -1,0 +1,3 @@
+--hidden
+--type-add
+tstest:*.test.{ts,tsx}

@@ -1,0 +1,5 @@
+font-family = "Hack Nerd Font Mono"
+font-size = 14
+config-file = ?~/.local/share/nvim/lazy/nightfox.nvim/extra/carbonfox/carbonfox.ghostty
+
+theme = carbonfox

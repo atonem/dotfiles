@@ -1,0 +1,7 @@
+[General]
+color = true
+column = 40
+editor = "nvim"
+format = "[$description]: $command $tags"
+selectcmd = "fzf --ansi --layout=reverse --border --height=90% --pointer=* --cycle --prompt=Snippets: "
+snippetfile = "~/.config/pet/snippet.toml"
