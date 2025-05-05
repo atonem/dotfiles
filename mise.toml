@@ -1,0 +1,9 @@
+[tools]
+chezmoi = 'latest'
+gitleaks = 'latest'
+just = 'latest'
+'pipx:pre-commit' = 'latest'
+shellcheck = 'latest'
+shfmt = 'latest'
+taplo = "latest"
+yamlfmt = 'latest'
