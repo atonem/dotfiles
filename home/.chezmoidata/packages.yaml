@@ -1,0 +1,57 @@
+---
+packages:
+  darwin:
+    brews:
+      - coreutils
+      - pkg-config
+      - git
+      - bash
+      - openssl
+      - libyaml
+      - libjpg
+      - zlib
+      - libxslt
+      - gpg
+      - wget
+      - tree
+      - html-xml-utils
+      - blueutil
+      - sleepwatcher
+      - mas
+      - zsh-completions
+      - tree
+      - watch
+      - tig
+      - task
+      - taskopen
+      - timewarrior
+      - git-filter-repo
+      - luarocks
+      - mise
+      - nb
+      - sponge
+      - watchman
+      - nss # for certutil
+    casks:
+      - font-hack-nerd-font
+      - rectangle
+      - alfred
+      - firefox@developer-edition
+      - librewolf
+      - signal
+      - ghostty
+    mas:
+      - name: 1Password
+        id: 443987910
+      - name: Amphetamine
+        id: 937984704
+      - name: Telegram Lite
+        id: 946399090
+      - name: The Unarchiver
+        id: 425424353
+      - name: Markoff
+        id: 1084713122
+      - name: Spark
+        id: 1176895641
+      - name: LINE
+        id: 539883307

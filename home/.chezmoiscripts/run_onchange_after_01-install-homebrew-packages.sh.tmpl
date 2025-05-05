@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+# .chezmoidata/packages.yaml hash: {{ include ".chezmoidata/packages.yaml" | sha256sum }}
+
+readonly script_name=run_onchange_after-01-install-homebrew-packages.sh.tmpl
+readonly script_skip=01
+readonly lib_bash='{{ joinPath .chezmoi.workingTree "lib/lib.bash" }}'
+# shellcheck source=lib/lib.bash
+source "${lib_bash}"
+setup '01: Install Homebrew Packages'
+
+case "$(uname -s)" in
+Darwin)
+  if ! command -v brew >/dev/null 2>&1; then
+    case "$(uname -m)" in
+    arm64) HOMEBREW_PREFIX="/opt/homebrew" ;;
+    *) HOMEBREW_PREFIX="/usr/local" ;;
+    esac
+
+    if ! [[ -x "${HOMEBREW_PREFIX}/bin/brew" ]]; then
+      [[ "${CHEZMOI_VERBOSE:-}" == 1 ]] && echo >&2 Homebrew is not installed
+      exit 0
+    fi
+
+    eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)" || true
+  fi
+
+  declare -a flags
+  flags=()
+
+  if ! verbose; then
+    flags+=(--quiet)
+  fi
+
+  # use the obscure variable evaluation since bash version might be low
+  # see https://stackoverflow.com/questions/7577052/unbound-variable-error-in-bash-when-expanding-empty-array
+  HOMEBREW_CASK_OPTS=--no-quarantine brew bundle "${flags[@]:+\"${flags[@]}\"}" \
+    --file=/dev/stdin <<EOF
+{{ range .packages.darwin.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ range .packages.darwin.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+{{ range .packages.darwin.mas -}}
+mas {{ .name | quote }}, id: {{ .id }}
+{{ end -}}
+EOF
+  ;;
+
+*) : ;;
+esac
