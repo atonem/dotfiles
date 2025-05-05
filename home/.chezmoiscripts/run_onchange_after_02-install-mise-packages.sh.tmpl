@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# dot_config/mise/config.toml hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+
+readonly script_name=run_onchange_after-02-install-mise-packages.sh.tmpl
+readonly script_skip=02
+readonly lib_bash='{{ joinPath .chezmoi.workingTree "lib/lib.bash" }}'
+# shellcheck source=lib/lib.bash
+source "${lib_bash}"
+setup '02: Install Mise Packages'
+
+#changed
+case "$(uname -s)" in
+Darwin)
+  if ! command -v mise >/dev/null 2>&1; then
+    [[ "${CHEZMOI_VERBOSE:-}" == 1 ]] && echo >&2 Mise is not installed
+    exit 0
+  fi
+
+  declare -a flags
+  flags=()
+
+  if ! verbose; then
+    flags+=(--quiet)
+  fi
+
+  # use the obscure variable evaluation since bash version might be low
+  # see https://stackoverflow.com/questions/7577052/unbound-variable-error-in-bash-when-expanding-empty-array
+  mise install "${flags[@]:+\"${flags[@]}\"}"
+  ;;
+
+*) : ;;
+esac
