@@ -1,0 +1,7 @@
+---
+continue_on_error: true
+formatter:
+  type: basic
+  trim_trailing_whitespace: true
+  include_document_start: true
+  eof_newline: true

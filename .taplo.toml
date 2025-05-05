@@ -1,0 +1,8 @@
+# written externally, avoid messy diffs
+exclude = ["**/pet/snippet.toml"]
+
+[formatting]
+align_comments = false
+indent_tables = true
+inline_table_expand = false
+reorder_keys = true
