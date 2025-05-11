@@ -11,11 +11,13 @@ format:
   shfmt -w {{ shell_files }}
   yamlfmt .
   taplo format
+  stylua .
 
 check:
   shfmt -d {{ shell_files }}
   yamlfmt -lint .
   taplo format --check
+  stylua --check .
 
 lint: check
   shellcheck {{ shell_files }}
