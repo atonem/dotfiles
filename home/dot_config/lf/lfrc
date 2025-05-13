@@ -1,0 +1,62 @@
+# interpreter for shell commands
+set shell bash
+
+# set '-eu' options for shell commands
+# These options are used to have safer shell commands. Option '-e' is used to
+# exit on error and option '-u' is used to give error for unset variables.
+# Option '-f' disables pathname expansion which can be useful when $f, $fs, and
+# $fx variables contain names with '*' or '?' characters. However, this option
+# is used selectively within individual commands as it can be limiting at
+# times.
+set shellopts '-eu'
+
+# opts
+set hidden!
+set drawbox
+set incfilter
+set globfilter
+set icons
+set info size:time
+set truncatepct 75
+set ifs "\n"
+
+# custom commands
+## override delete to put in trash
+cmd delete %{{
+  set -f
+  printf "delete: $fx? [y/n] "
+  read ans
+  [ "$ans" = "y" ] && trash $fx
+}}
+
+# keymaps
+map D delete
+map <c-c> quit
+map <esc> clear
+
+## unmap
+map q
+
+
+cmd fzf_jump ${{
+    res="$(find . -maxdepth 5 | fzf --reverse --header="Jump to location")"
+    if [ -n "$res" ]; then
+        if [ -d "$res" ]; then
+            cmd="cd"
+        else
+            cmd="select"
+        fi
+        res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+        lf -remote "send $id $cmd \"$res\""
+    fi
+}}
+
+map <c-f> :fzf_jump
+
+cmd yank %{{
+  printf '%s' "$fx" | pbcopy
+  printf "yanked: $fx"
+}}
+
+map Y :yank
+
