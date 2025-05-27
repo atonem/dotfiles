@@ -1,5 +1,4 @@
 ---
-continue_on_error: true
 formatter:
   type: basic
   trim_trailing_whitespace: true
