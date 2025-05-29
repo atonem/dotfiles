@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+function read_and_set_from_file() {
+  local filepath=$1
+
+  # shellcheck disable=SC2034
+  grep "^export" "$filepath" |
+    while IFS=' =' read -r ignoreexport envvar; do
+      local key="${envvar%=*}"
+      local value
+      value="$(echo "${envvar#*=}" | tr -d '"')"
+      # eval to resolve env vars
+      value="$(eval "echo $value")"
+      # declare vars in scope for reuse
+      declare "$key"="${value}"
+
+      launchctl setenv "${key}" "${value}"
+      # echo "$(date) set '${key}' to '${value}'" >>$HOME/launchctl.log
+    done
+
+}
+
+function read_and_set() {
+  local zshenv="$HOME/.zshenv"
+
+  read_and_set_from_file "$zshenv"
+
+  # NOTE: currently not needed, better not sourcing to avoid secretssss
+  # local local_zshenv="$ZDOTDIR/.zshenv.local"
+  # [[ -f "$local_zshenv" ]] && read_and_set_from_file "$local_zshenv"
+
+}
+
+case "${1}" in
+
+"")
+  read_and_set
+  ;;
+
+"reload")
+  launchctl unload ~/Library/LaunchAgents/environment-setup.plist
+  launchctl load ~/Library/LaunchAgents/environment-setup.plist
+  echo "launchctl environment variables reloaded."
+  ;;
+
+esac
