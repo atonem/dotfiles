@@ -16,8 +16,21 @@ vim.api.nvim_set_keymap("n", "L", ":tabnext<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>o", "o<esc>", opts)
 vim.api.nvim_set_keymap("n", "<leader>O", "O<esc>", opts)
 
--- Make Y behave like other capitals
+-- yanking
+local function createCopyExpand(expr)
+  local function copyExpand()
+    local filepath = vim.fn.expand(expr)
+    vim.fn.setreg("+", filepath) -- write to clippoard
+    print("yanked:", filepath)
+  end
+  return copyExpand
+end
+-- end of line
 vim.api.nvim_set_keymap("n", "Y", "y$", opts)
+-- -- full buffer path
+vim.keymap.set("n", "yp", createCopyExpand("%:p"), { noremap = true, silent = true, desc = "Full Path" })
+-- -- relative buffer path
+vim.keymap.set("n", "yr", createCopyExpand("%:~:."), { noremap = true, silent = true, desc = "Relative Path" })
 
 -- qq to record, Q to replay
 vim.api.nvim_set_keymap("n", "Q", "@q", opts)

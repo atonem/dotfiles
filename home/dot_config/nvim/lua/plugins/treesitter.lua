@@ -40,6 +40,7 @@ return {
           "gitattributes",
           "gitcommit",
           "gitignore",
+          "go",
           "graphql",
           "groovy",
           "html",

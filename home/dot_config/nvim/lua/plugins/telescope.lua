@@ -18,7 +18,8 @@ return {
         function()
           require("telescope.builtin").find_files({
             hidden = true,
-            cwd = vim.fn.finddir(".git/..", ".;"),
+            -- TODO: not sure this works well in subdirs?
+            -- cwd = vim.fn.finddir(".git/..", ".;"),
           })
         end,
         desc = "Find File",

@@ -14,6 +14,7 @@ return {
         "jq",
         "jsonls",
         "lua_ls",
+        "gopls",
         "prettierd",
         "pylsp",
         "ruff",
@@ -72,6 +73,7 @@ return {
         log_level = vim.log.levels.DEBUG,
         filetype = {
           bash = { require("formatter.filetypes.sh").shfmt },
+          go = { require("formatter.filetypes.go").gofmt },
           html = { defaults.prettierd },
           json = { require("formatter.filetypes.json").jq },
           lua = { require("formatter.filetypes.lua").stylua },
